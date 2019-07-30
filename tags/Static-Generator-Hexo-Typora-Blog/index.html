@@ -157,7 +157,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes read (About 1421 words)
+                    9 minutes read (About 1419 words)
                 </span>
                 
                 
@@ -215,7 +215,7 @@
 <p><img src="/images/Typora-Hexo/4.png" alt></p>
 </li>
 </ol>
-<p>   Github서버에 Markdown파일을 업로드하면 _config.yml파일에 <strong>permalink</strong>에서 지정한 형식으로 경로가 설정된다. 예를 들어 ‘Mobilenetv3.md’파일을 ‘나의 directory/source/Mobilenetv3.md ‘라는 곳에 생성했다고 하자. 실제로 deploy를 하게되면 github Web 주소 상에서는 ‘<a href="https://BloomBerry.github.io/ree/master/2019/07/28/Mobilenetv3&#39;">https://BloomBerry.github.io/ree/master/2019/07/28/Mobilenetv3&#39;</a> 라는 주소로 index.html파일이 생성된다.</p>
+<p>   Github서버에 Markdown파일을 업로드하면 _config.yml파일에 <strong>permalink</strong>에서 지정한 형식으로 경로가 설정된다. 예를 들어 ‘Mobilenetv3.md’파일을 ‘나의 directory/source/Mobilenetv3.md ‘라는 곳에 생성했다고 하자. 실제로 deploy를 하게되면 github Web 주소 상에서는 <a href="https://BloomBerry.github.io/2019/07/28/Mobilenetv3">https://BloomBerry.github.io/2019/07/28/Mobilenetv3</a> 라는 주소로 index.html파일이 생성된다.</p>
 <p>   이때 중요한 것은 동일한 경로, 예컨데 ‘나의 directory/source’에 Mobilenetv3라는 디렉토리를 만들고 그곳에 이미지를 넣는다고 생각하면 오산이다. Hexo는  <strong>themes</strong> 디렉토리 내부 경로만 참조하기 때문에 ‘themes/자신의 themes’ 경로에 이미지를 추가해줘야 한다. 예컨데 icarus를 사용한다면 ‘themes/icaurs/source/MobilenetV3’ 경로에 image를 추가해야 한다.</p>
 <p>   이를 원활하게 하기 위해 <strong>typora-root-url</strong>과 <strong>typora-copy-images-to</strong>를 이용하면 drag-and-drop하여 Image를 추가할 수 있다. <u>주의할 점은 github에 deploy하기 전에 반드시 두 줄을 #으로 주석처리해야 한다.</u></p>
 <p>   <img src="/images/Typora-Hexo/6.png" alt></p>
