@@ -2,24 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>YOLO v1 - BloomBerry&#39;s Tech Blog</title>
+<title>SSD - BloomBerry&#39;s Tech Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<link rel="canonical" href="https://BloomBerry.github.io/2019/10/10/yolo (you look only once)/">
+<link rel="canonical" href="https://BloomBerry.github.io/2019/10/19/papers/ssd/">
 
-    <meta name="description" content="YOLO (You Look Only Once)0. Background‘15.06 Archive  ‘16.05 CVPR Joseph Redmon, et. al.  Abstract 물체 인식 문제를 클래스 정보를 포함한 앵커 박스를 공간적으로 분리된 관점에서 회기 문제로 봄. Single Network 관점에서 end-to-end로 학습하여 속도가 빠르고 최적">
-<meta name="keywords" content="YOLO v1">
+    <meta name="description" content="Single Shot Multibox Detector Created: Oct 17, 2019 12:23 PM Tags: 논문  0. Background ‘15.12 Archive 등재 Wei Liu, et. al  Abstract Aspect Ratio, Scales를 feature map마다 별개로 둔 앵커 박스를 생성 다양한 크기로 출현하는 물체를 인식">
+<meta name="keywords" content="SSD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="YOLO v1">
-<meta property="og:url" content="https://BloomBerry.github.io/2019/10/10/YOLO (You Look Only Once)/index.html">
+<meta property="og:title" content="SSD">
+<meta property="og:url" content="https://BloomBerry.github.io/2019/10/19/papers/SSD/index.html">
 <meta property="og:site_name" content="BloomBerry&#39;s Tech Blog">
-<meta property="og:description" content="YOLO (You Look Only Once)0. Background‘15.06 Archive  ‘16.05 CVPR Joseph Redmon, et. al.  Abstract 물체 인식 문제를 클래스 정보를 포함한 앵커 박스를 공간적으로 분리된 관점에서 회기 문제로 봄. Single Network 관점에서 end-to-end로 학습하여 속도가 빠르고 최적">
+<meta property="og:description" content="Single Shot Multibox Detector Created: Oct 17, 2019 12:23 PM Tags: 논문  0. Background ‘15.12 Archive 등재 Wei Liu, et. al  Abstract Aspect Ratio, Scales를 feature map마다 별개로 둔 앵커 박스를 생성 다양한 크기로 출현하는 물체를 인식">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://bloomberry.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-11T16:19:34.877Z">
+<meta property="og:updated_time" content="2019-10-19T11:34:04.972Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YOLO v1">
-<meta name="twitter:description" content="YOLO (You Look Only Once)0. Background‘15.06 Archive  ‘16.05 CVPR Joseph Redmon, et. al.  Abstract 물체 인식 문제를 클래스 정보를 포함한 앵커 박스를 공간적으로 분리된 관점에서 회기 문제로 봄. Single Network 관점에서 end-to-end로 학습하여 속도가 빠르고 최적">
+<meta name="twitter:title" content="SSD">
+<meta name="twitter:description" content="Single Shot Multibox Detector Created: Oct 17, 2019 12:23 PM Tags: 논문  0. Background ‘15.12 Archive 등재 Wei Liu, et. al  Abstract Aspect Ratio, Scales를 feature map마다 별개로 둔 앵커 박스를 생성 다양한 크기로 출현하는 물체를 인식">
 <meta name="twitter:image" content="https://bloomberry.github.io/images/og_image.png">
 
 
@@ -95,7 +95,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="YOLO v1" height="28">
+                <img src="/images/logo.svg" alt="SSD" height="28">
             
             </a>
         </div>
@@ -146,13 +146,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-10T06:24:00.000Z">2019-10-10</time>
+                <time class="level-item has-text-grey" datetime="2019-10-19T11:30:00.000Z">2019-10-19</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    11 minutes read (About 1602 words)
+                    10 minutes read (About 1507 words)
                 </span>
                 
                 
@@ -161,188 +161,189 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                YOLO v1
+                SSD
             
         </h1>
         <div class="content">
-            <h1 id="YOLO-You-Look-Only-Once"><a href="#YOLO-You-Look-Only-Once" class="headerlink" title="YOLO (You Look Only Once)"></a>YOLO (You Look Only Once)</h1><h2 id="0-Background"><a href="#0-Background" class="headerlink" title="0. Background"></a>0. Background</h2><p>‘15.06 Archive</p>
+            <h1 id><a href="#" class="headerlink" title></a></h1><h1 id="Single-Shot-Multibox-Detector"><a href="#Single-Shot-Multibox-Detector" class="headerlink" title="Single Shot Multibox Detector"></a>Single Shot Multibox Detector</h1><ul>
+<li>Created: Oct 17, 2019 12:23 PM</li>
+<li>Tags: 논문</li>
+</ul>
+<h1 id="0-Background"><a href="#0-Background" class="headerlink" title="0. Background"></a>0. Background</h1><ul>
+<li>‘15.12 Archive 등재</li>
+<li>Wei Liu, et. al</li>
+</ul>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><ul>
+<li>Aspect Ratio, Scales를 feature map마다 별개로 둔 앵커 박스를 생성<ul>
+<li>다양한 크기로 출현하는 물체를 인식하기 위함</li>
+</ul>
+</li>
+<li>Single Neural Network의 출력은 앵커박스로 이산화</li>
+<li>Prediction 시, 물체의 클래스 probability score와 앵커 박스로부터 조정될 크기 값을 출력</li>
+<li>Input: 300x300) Pascal VOC 207 test : 74.3 mAP // 59 FPS@TitanX (Faster RCNN: 73.2mAP // 7 FPS, YOLO: 63.4mAP)</li>
+</ul>
+<h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h1><h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<li>Single Shot Detector (YOLO) 보다 정확하고, slower techiques (Faster R-CNN)보다 빠른 실시간 물체인식 알고리즘 제안</li>
+<li>고정된 Anchor-Box 기준으로 offset과 score를 추출하기 위해 Feature map에 Convolution Layer를 추가한 구조</li>
+<li>서로 독립적인 Feature map에서 scale, aspect ratio를 바꿔서 정확도 향상시킴</li>
+<li>Pascal VOC, COCO, ILSVRC 비교하여 성능&amp;속도 trade-off 향상됨을 입증함</li>
+</ul>
+<h1 id="2-The-Single-Shot-Detector-SSD"><a href="#2-The-Single-Shot-Detector-SSD" class="headerlink" title="2. The Single Shot Detector (SSD)"></a>2. The Single Shot Detector (SSD)</h1><p><img src="/images/SSD/Untitled-c2817ebb-d3bc-460c-8aac-35ff4d554929.png" alt></p>
 <ul>
-<li>‘16.05 CVPR</li>
-<li>Joseph Redmon, et. al.</li>
+<li>4x4 &amp; 8x8 Feature Map에서 생성된 anchor-box 예시.</li>
+<li>각각 빨간색, 파란색 anchor-box는 G.T.인 개, 고양이와 matching되어 positive anchorbox, 나머진 nregative anchorbox로 (배경으로) 학습이 됨</li>
+<li>목적함수(Loss)는 confidance loss + localization loss의 합계</li>
 </ul>
-<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><ul>
-<li>물체 인식 문제를 클래스 정보를 포함한 앵커 박스를 공간적으로 분리된 관점에서 회기 문제로 봄.</li>
-<li>Single Network 관점에서 end-to-end로 학습하여 속도가 빠르고 최적화가 가능함. (Titan X: 45 FPS)</li>
-<li>Fast Yolo는 155 FPS</li>
-<li>SOTA인 R-CNN에 비해 localization 에러는 많으나, <u>False Positive가 적다.</u></li>
-<li>당시 SOTA였던 DPM, R-CNN에 비해 일반화 효과가 뛰어남.</li>
-</ul>
-<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><p><img src="/images/YOLO/a.png" alt="Fig 1."></p>
+<h2 id="2-1-Model"><a href="#2-1-Model" class="headerlink" title="2-1. Model"></a>2-1. Model</h2><p><img src="/images/SSD/Untitled-2ced08bf-260b-4360-9fe9-a944f724eb2d.png" alt></p>
 <ul>
-<li>Deformable Parts Model (DPM)은 Sliding Window를 이용하여 모든 image에 대해 균일한 stride로 움직인다. (비효율적)</li>
-<li>RCNN은 Region Proposal을 통과한 후, potential Bounding Box에 대해 Classifier를 통과시키고, post-processing을 통과시킨다. <ul>
-<li>각각의 파트가 따로 학습되어, 학습이 용이하지 않고, 최적화가 어렵다.</li>
+<li>전반부 (BaseNet): 이미지로부터 높은 해상도의 feature map 추출<ul>
+<li>VGG 16 사용</li>
 </ul>
 </li>
-<li>YOLO은 end-to-end로 한 번에 이미지 pixel domain에서 Box coordinate를 출력시킨다.<ul>
-<li>이미지 Resize –&gt; Single CNN 통과 –&gt; Confidence 값을 기준치로 filtering </li>
-</ul>
-</li>
-<li>다른 OD에 비해 장점<ul>
-<li>학습이 용이하다. [Figure 1] <ul>
-<li>물체 인식 문제 –&gt; 회귀 문제로 봤음. (Simple Pipeline)</li>
-<li>Titan X 기준 45 FPS –&gt; 1 이미지 처리당  &lt; 25 [ms] latency –&gt; <u>real time</u></li>
-</ul>
-</li>
-<li><strong>Global Context</strong>를 encode 함 –&gt; Background False Positive 줄어듦.<ul>
-<li>DPM이나 R-CNN은 지엽적인 정보만 봄 –&gt; YOLO에 비해 Background에 대한 FP가 2배 이상 나타남</li>
-</ul>
-</li>
-<li>일반화 효과가 뛰어남<ul>
-<li>자연의 이미지에서 학습하고 Artwork으로 test하면, 다른 OD Network에 비해 좋은 성능이 나옴.<ul>
-<li>새로운 Domain Data나 기대하지 않은 image에 더 좋은 성능이 날 것임</li>
+<li>후반부 (Detection Head): 물체 인식 출력 값 생성<ul>
+<li>다양한 크기의 Feature-map: Output Stride 8, 16, 32, 64, 128, 256 사용</li>
+<li>Convolution Predictor를 검출기로 활용함<ul>
+<li><em>m</em> x <em>n</em> 크기의 Feature-map이 채널 크기가 <em>p</em>일 경우 <em>3</em> x <em>3</em> x <em>p</em> 개의 커널로 생성함</li>
+<li>Grid 당 <em>k</em> anchor box일 경우, 출력 갯수는 <em>kmn</em>(<em>c+4</em>)</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="2-Unified-Detection"><a href="#2-Unified-Detection" class="headerlink" title="2. Unified Detection"></a>2. Unified Detection</h2><ul>
-<li>R-CNN에서 3부분이 담당하던 기능을 Single DNN으로 일원화함</li>
-<li>전체 이미지에서 처리한 feature를 사용하여 bounding box를 예측함<ul>
-<li>Real-time</li>
-<li>end-to-end Training (학습의 용이성)</li>
-<li>High Precision (당시 real-time Detector보다 2배 이상 성능)</li>
-</ul>
-</li>
-<li>S x S grid를 기준으로 물체와의 중심점의 차이값 ($\Delta x, \Delta y$), 전체 이미지에 대한 물체의 크기 ($w, h$) , 그리고 물체인 정도를 G.T. box와 grid의 IOU를 가지고 판단함.</li>
-</ul>
-<p>$$<br>Pr(Class|Object) * Pr(Object) * IOU_{pred}^{truth} =Pr(Class)*IOU_{pred}^{thres}<br>$$</p>
-<p><img src="/images/YOLO/b.png" alt></p>
+<h2 id="2-2-Training"><a href="#2-2-Training" class="headerlink" title="2-2. Training"></a>2-2. Training</h2><ul>
+<li><p>매칭 전략</p>
 <ul>
-<li>각 Grid 마다 <em>B</em>개의 Bounding Box를 생성함. (B=2 for YOLO v1)</li>
-<li>Objectness Score는 GT와 Predicted Box간의 IOU를  가지고 판단함. ( if Objectness &gt; <em>thres</em> ? true : false )</li>
-<li><em>Probability</em>는 <em>B</em>와 무관하게 <strong>Grid마다 1개씩만 추측한다.</strong> </li>
-<li>최종 Output은 $$S \times S\times(B*5+C)$$이다.<ul>
-<li>Pascal VOC에서 C=20, B=2, S=7을 사용함.</li>
+<li>Highest jaccard overlap이 되는 앵커박스를 GT와 매칭</li>
+<li>Threshold 0.5이상을 추가로 매칭</li>
+<li>Recall을 높이기 위해(?)</li>
 </ul>
 </li>
-</ul>
-<h3 id="2-1-Network-Design"><a href="#2-1-Network-Design" class="headerlink" title="2-1. Network Design"></a>2-1. Network Design</h3><p><img src="/images/YOLO/c.png" alt></p>
+<li><p>목표함수</p>
 <ul>
-<li><p>앞 단은 Conv Layer + 뒷 단은 FC Layer로 구성</p>
-</li>
-<li><p>YOLO는 24개의 Conv Layer, Fast YOLO는 9개의 Conv Layer로 구성</p>
-</li>
-<li><p>GoogleNet를 참조하여 Network를 Design. (단,  Inception모듈 대신 Simple하게 3x3 Conv 뒤에 1x1 Conv를 둠)</p>
+<li>x는 matched index 0이면 unmatched, 1은 matched.</li>
+<li>N은 matching된 앵커박스 갯수</li>
+<li>c는 class probability</li>
+</ul>
 </li>
 </ul>
-<h3 id="2-2-Training"><a href="#2-2-Training" class="headerlink" title="2-2. Training"></a>2-2. Training</h3><ul>
-<li>ImageNet Pretrained Weight 사용 ( Top 1 accuracy: 88%)</li>
-<li>Input Image : 224 x 224 –&gt; 448 x 448로 바꿈 ($\because$Image resolution이 높아야 precision이 향상)</li>
-<li>$w, h$는 Image의 width, height로 정규화 ($\because$0~1 사이로 두기 위해)</li>
-<li>$x, y$는 grid cell과의 offset으로 paramitarized</li>
-<li>Leaky Relu 사용</li>
-</ul>
-<p><img src="/images/YOLO/x.png" alt></p>
+<p><img src="/images/SSD/Untitled-4e515659-5bca-4ca3-bfd9-0af62d4b0970.png" alt></p>
 <ul>
-<li><p>Loss Function</p>
-<p>  <img src="/images/YOLO/y.png" alt>    </p>
+<li>위치 손실<ul>
+<li>L1손실함수. 추정 박스(l)과 GT박스(g)간의 차이를 손실값으로 봄</li>
+<li>앵커박스의 중심(dcx,dcy)와의 offset을 학습하도록 구현됨</li>
+<li>너비(dwi), 높이(dhi)로 정규화시킴</li>
+<li>모두 matching된 앵커박스만 손실값으로 봄</li>
+</ul>
 </li>
-<li><p>$|_i$ 는 i번째 grid cell을 의미</p>
+</ul>
+<p><img src="/images/SSD/Untitled-e61fbee7-3a6c-4b8c-8dcc-2bce14a4212b.png" alt></p>
 <ul>
-<li>i번째 grid cell에 물체가 있는 경우만 classification penalty부여</li>
+<li>분류 손실</li>
+<li>매칭된 앵커박스(positive)와 매칭 안된 앵커박스(negative)의 비율을 1:3 으로 학습</li>
+<li>더 안정적으로 학습됨</li>
 </ul>
-</li>
-<li><p>$|_{ij}^{obj}$ 는 i번째 grid cell의 j번째 bounding box를 의미</p>
+<p><img src="/images/SSD/Untitled-496ecf18-2287-4940-b26c-b9b9d04b5346.png" alt></p>
 <ul>
-<li>i번째 grid cell j번째 bounding box가 물체가 있는 경우 localization penalty 부여</li>
+<li>Feature map의 grid에서 생성된 박스는 반드시 receptive field가 아님.</li>
+<li>Scale값을 조정해서 앵커박스의 크기를 조절할 수 있음</li>
+<li>m개의 feature map일 때, linear scaling rule 적용하여 scale 산출</li>
 </ul>
-</li>
-<li><p>$\lambda_{coord}=5, \lambda_{noobj}=0.5$ 사용</p>
+<p><img src="/images/SSD/Untitled-e3670a91-f948-40bb-b98f-fb4151bdd440.png" alt></p>
 <ul>
-<li>localization error에 가중치를 줌으로써 noobj에 따른 gradient decent=0수렴 현상 방지</li>
+<li>다양한 위치, 크기의 물체를 견고히 인식하기 위해 data augmentation기법 적용<ul>
+<li>Horizontal flip, Random patch, image distortion, etc</li>
 </ul>
 </li>
+<li>Basenet은 vgg16 사용</li>
 </ul>
-<h3 id="2-3-Inference"><a href="#2-3-Inference" class="headerlink" title="2-3. Inference"></a>2-3. Inference</h3><ul>
-<li>98개의 Box만 생성</li>
-<li>크기가 큰 물체, grid cell의 경계면에 맞닿아 있는 물체의 경우 여러개의 grid로부터 물체검출이 됨.<ul>
-<li>Non-Maximum Suppression을 통해 약 2~3% mAP 향상 가능</li>
+<h1 id="3-Experimental-Results"><a href="#3-Experimental-Results" class="headerlink" title="3. Experimental Results"></a>3. Experimental Results</h1><h2 id="3-1-Pascal-VOC2007"><a href="#3-1-Pascal-VOC2007" class="headerlink" title="3-1. Pascal VOC2007"></a>3-1. Pascal VOC2007</h2><ul>
+<li>Pascal voc 2012 test 결과 : 81.6mAP</li>
+<li>COCO pretrained+512x512+voc12 trainval 학습셋으로 사용</li>
 </ul>
-</li>
+<p><img src="/images/SSD/Untitled-e1ee7b3b-6000-442c-a74e-f1ec289fbd8d.png" alt></p>
+<h2 id="3-2-Model-analysis"><a href="#3-2-Model-analysis" class="headerlink" title="3-2. Model analysis"></a>3-2. Model analysis</h2><ul>
+<li>Data Augmentation에 의한 성능 향상이 앞도적으로 높았음 (8.8% mAP 향상)</li>
+<li>Anchor Box의 모양을 다양화한게 성능 향상에 도움이 됨</li>
+<li>Atrous Conv을 사용함으로써 성능은 유지하되, 속도 향상이 있었음 (20% 향상)</li>
 </ul>
-<h3 id="2-4-Limitations-of-YOLO"><a href="#2-4-Limitations-of-YOLO" class="headerlink" title="2-4. Limitations of YOLO"></a>2-4. Limitations of YOLO</h3><ul>
-<li>Grid cell당 2개의 물체, 1개의 클래스만 검출가능하기 때문에, 작고 군집된 물체를 잡는데 약함.</li>
-<li>물체의 모양을 데이터 기반으로 학습하다 보니, Aspect Ratio (가로세로 비율), 물체의 형태가 새로운 물체의 경우 일반화 효과가 떨어짐.</li>
-<li>Feature가 coarse하다 보니, 물체의 Localized resolution이 좋지 못함.</li>
-<li>큰 물체, 작은 물체 모두 동일하게 작은 에러에 대한 loss를 부여함. 이 때문에 local error 발생 (IOU를 가지고 loss를 잡는게 더 좋을 것)</li>
-</ul>
-<h2 id="3-Comparison-to-Other-Detection-Systems"><a href="#3-Comparison-to-Other-Detection-Systems" class="headerlink" title="3. Comparison to Other Detection Systems"></a>3. Comparison to Other Detection Systems</h2><ul>
-<li><p>Detection System은 모두 Robust한 Feature를 추출하고, Localizer 혹은 Classifier를 feature space를 통과시킨다.</p>
+<p><img src="/images/SSD/Untitled-bdf55de2-1e9b-475f-989c-4b814dbbd0df.png" alt></p>
 <ul>
-<li>Sliding Window로 전체 Feature를 훑거나, 특정 region만 본다.</li>
+<li>흰색은 True Positive, 파란색(Local error) 빨간색(Class error)은 True Negative  보라색은 False Positive</li>
+<li>빨간 실선은 (IOU Threshold=0.5) Recall, 점선은 (IOU Threshold=0.1) Recall</li>
 </ul>
-</li>
-<li><p>Deformable Parts Model (DPM): Feature 추출, 영역 분류, 높은 score의 영역으로부터 BBox 검출 등의 단계를  disjoint하게 실행함</p>
-</li>
-<li><p>R-CNN: Selective Search를 이용하여 잠재적인 BBox 2,000개를 생성함. SVM은 박스 score를 내고, NMS 통과시킴</p>
-</li>
-<li><p>Other Fast Detectors: Selective Search를 Region Proposal로 대체함. <u>Computation 공유</u></p>
-</li>
-<li><p>Deep MultiBox: DNN을 이용한 Single Object Detection에 사용됨. ROI를 추론함. Class prediction (probability X)</p>
-</li>
-<li><p>OverFeat: Sliding Window를 사용하여 DNN으로 Localization을 수행. Global context 사용 못하는 한계</p>
-</li>
-<li><p>MultiGrasp: Grid 방식 도입. DNN으로 Single Object 검출에 사용. Class 추출 X, Multi Object X</p>
-</li>
-</ul>
-<h2 id="4-Experiments"><a href="#4-Experiments" class="headerlink" title="4. Experiments"></a>4. Experiments</h2><ul>
-<li>Pascal VOC 2007, 2012를 Fast-RCNN과 비교하며 실험 진행</li>
-</ul>
-<h3 id="4-1-Comparison-to-Other-Real-Time-Systems"><a href="#4-1-Comparison-to-Other-Real-Time-Systems" class="headerlink" title="4-1. Comparison to Other Real-Time Systems"></a>4-1. Comparison to Other Real-Time Systems</h3><ul>
-<li>mAP &amp; speed Trade-off를 살펴봄</li>
-</ul>
-<p><img src="/images/YOLO/d.png" alt></p>
+<p><img src="/images/SSD/Untitled-58110c17-e27e-4787-a73f-3e0e4c2c4b7f.png" alt></p>
 <ul>
-<li>Fastest DPM: Selective Search를 static BBox proposal로 대체함</li>
-<li>Real-time(30FPS) 만족하는 Detector중에서 최고성능임</li>
-<li>Faster R-CNN은 YOLO에 비해 10 mAP가 좋으나, 실시간성이 보장이 안됨.</li>
+<li>Localization error가 작음.</li>
+<li>위치 regression잘 한다는 뜻</li>
+<li>Classification error가 큼.</li>
+<li>검출기 head를 localization과 공유하기 때문</li>
 </ul>
-<h3 id="4-2-VOC-2007-Error-Analysis"><a href="#4-2-VOC-2007-Error-Analysis" class="headerlink" title="4-2. VOC 2007 Error Analysis"></a>4-2. VOC 2007 Error Analysis</h3><ul>
-<li>Fast R-CNN vs. YOLO in Pascal VOC 2007</li>
-</ul>
-<p><img src="/images/YOLO/e.png" alt></p>
+<p><img src="/images/SSD/Untitled-6559f053-9124-4a42-847b-42d5c37e2949.png" alt></p>
 <ul>
-<li>Yolo가 Localization error가 많았음</li>
-<li>Fast R-CNN이 YOLO에 비해 False Positive가 약 3배 높음<ul>
-<li>Correct: correct class &amp; IOU &gt; 0.5</li>
-<li>Localization: correct class &amp; 0.1 &lt; IOU &lt; 0.5</li>
-<li>Similar : class is similar &amp; IOU &gt; 0.1</li>
-<li>Other: class is wrong &amp; IOU &gt; 0.1</li>
-<li>Background: IOU &lt; 0.1 for any object</li>
+<li><p>작은 물체를 더 못 검출.</p>
+<p>  <img src="/images/SSD/Untitled-6a03567b-98d5-404e-8fb8-104f21aecdf0.png" alt></p>
+</li>
+<li><p>작은 물체를 검출하는 layer가 한참후에 detection head로 들어오므로, 정보손실 발생하기 때문.</p>
+</li>
+</ul>
+<h2 id="3-3-Pascal-VOC2012"><a href="#3-3-Pascal-VOC2012" class="headerlink" title="3-3. Pascal VOC2012"></a>3-3. Pascal VOC2012</h2><ul>
+<li>COCO로  pretrained시킴</li>
+<li>VOC07 train/val/test + VOC12 train/val 데이터를 학습용으로 사용</li>
+<li>Faster RCNN보다 성능 높음</li>
+</ul>
+<p><img src="/images/SSD/Untitled-538d9e44-705b-4d4c-8e37-ba0cbc8488cd.png" alt></p>
+<h2 id="3-4-COCO"><a href="#3-4-COCO" class="headerlink" title="3-4. COCO"></a>3-4. COCO</h2><ul>
+<li>Pascal VOC와 비슷한 양상임.</li>
+<li>작은 물체는 큰 물체에 비해 상대적으로 성능 향상이 적었음</li>
+</ul>
+<p><img src="/images/SSD/Untitled-57c8b169-4ad4-4795-b105-96d04f3ed6e3.png" alt></p>
+<h2 id="3-5-Preliminary-ILSVRC-results"><a href="#3-5-Preliminary-ILSVRC-results" class="headerlink" title="3-5. Preliminary ILSVRC results"></a>3-5. Preliminary ILSVRC results</h2><ul>
+<li>ILSVRC 2014 DET 데이터로 학습함</li>
+<li>43.4mAP</li>
+</ul>
+<h2 id="3-6-Data-Augmentation-for-Small-Object-Accuracy"><a href="#3-6-Data-Augmentation-for-Small-Object-Accuracy" class="headerlink" title="3-6. Data Augmentation for Small Object Accuracy"></a>3-6. Data Augmentation for Small Object Accuracy</h2><ul>
+<li>Random Crop은 Zoom In 효과를 줌</li>
+<li>Zoom Out 효과를 주기 위해 기존 이미지를 16배 키운 사이즈로 중간값으로 나머지 부분 채운후 학습.</li>
+</ul>
+<p><img src="/images/SSD/Untitled-ea55bea1-5f63-41fc-acf3-1e61759f02f3.png" alt></p>
+<ul>
+<li>2-3 mAP 향상 있었음</li>
+</ul>
+<p><img src="/images/SSD/Untitled-5db3ed12-33bc-46c3-8f59-cf71061035f7.png" alt></p>
+<p><img src="/images/SSD/Untitled-5c86dd11-ba73-4c2a-ad0d-da05a4132cb6.png" alt></p>
+<h2 id="3-7-Inference-Time"><a href="#3-7-Inference-Time" class="headerlink" title="3-7. Inference Time"></a>3-7. Inference Time</h2><p><img src="/images/SSD/Untitled-47b2924d-8e22-4957-9c47-4e71454b89ce.png" alt></p>
+<ul>
+<li>Inference 시간을 효율적으로 하기 위해 Confidence Threshold 0.01 이하 Anchor Box는 걸름</li>
+<li>그 이후 NMS를 IOU Threshold 0.5로 주고 Max Output Box 갯수를 200으로 함<ul>
+<li>1.7ms 소요 (새로 추가한 Layer들은 2.4ms 소요)</li>
 </ul>
 </li>
 </ul>
-<h4 id="4-3-Combining-Fast-R-CNN-and-YOLO"><a href="#4-3-Combining-Fast-R-CNN-and-YOLO" class="headerlink" title="4-3. Combining Fast R-CNN and YOLO"></a>4-3. Combining Fast R-CNN and YOLO</h4><ul>
-<li>YOLO와 Fast-RCNN의 Ensemble 결과, Fast-RCNN은 약 2~3% mAP 향상이 있었음</li>
-<li>이는 BaseNet만 바꾼 Fast-RCNN간의 Ensemble보다 월등히 향상된 결과임</li>
-<li>($\because$YOLO는 Fast-RCNN과 다른 error 양상을 보이기 때문임)</li>
+<h1 id="4-Related-Work"><a href="#4-Related-Work" class="headerlink" title="4. Related Work"></a>4. Related Work</h1><ul>
+<li>Selective Search<ul>
+<li>Image(R-CNN) 혹은 feature map(Fast-RCNN, MultiBox)을 crop한 후, Fixed size로 reshape하는 작업이 필요함.</li>
+<li>여러개의 잠재 Bounding Box에 대해 별도의 Classifier, Regressor를 둠으로써 속도 저하</li>
 </ul>
-<p><img src="/images/YOLO/f.png" alt></p>
-<h4 id="4-4-VOC-2012-Results"><a href="#4-4-VOC-2012-Results" class="headerlink" title="4-4. VOC 2012 Results"></a>4-4. VOC 2012 Results</h4><ul>
-<li>Fast-RCNN+YOLO조합은 ‘15.11월 당시 Top-4 달성함</li>
+</li>
+<li>Region Proposal Network<ul>
+<li>Faster-RCNN에서 Anchor Box와 함께 처음 사용됨.</li>
+<li>CNN의 출력 feature map을 RPN의 입력으로 사용하여 CNN을 통과시켜 자동으로 Region Propose함.</li>
+<li>뒤에 Classifier, Regressor를 별도로 둠으로써 두 단계를 거침.<ul>
+<li>Classifier, Regressor없이 바로 Classification하면 SSD와 같음.</li>
 </ul>
-<h4 id="4-5-Generalizability-Person-Detection-in-Artwork"><a href="#4-5-Generalizability-Person-Detection-in-Artwork" class="headerlink" title="4-5. Generalizability: Person Detection in Artwork"></a>4-5. Generalizability: Person Detection in Artwork</h4><ul>
-<li>Fast-RCNN은 AP가 많이 낮아짐($\because$Selective search로 local context만 봄)</li>
-<li>이에 반해 YOLO는 AP가 적게 낮아짐 ($\because$global context를 봄)</li>
+</li>
 </ul>
-<p><img src="/images/YOLO/g.png" alt></p>
-<h2 id="5-Real-Time-Detection-In-The-Wild"><a href="#5-Real-Time-Detection-In-The-Wild" class="headerlink" title="5. Real-Time Detection In The Wild"></a>5. Real-Time Detection In The Wild</h2><p><img src="/images/YOLO/h.png" alt></p>
-<h2 id="6-Conclusion"><a href="#6-Conclusion" class="headerlink" title="6.  Conclusion"></a>6.  Conclusion</h2><ul>
-<li>실시간을 보장하는 가장 빠른 일반화된 물체 인식 알고리즘임</li>
-<li><a href="http://pjreddie.com/yolo/" target="_blank" rel="noopener">http://pjreddie.com/yolo/</a> 에 더 자세한 내용이 나와 있음</li>
+</li>
+<li>One-shot Detector<ul>
+<li>SSD에서 Anchor Box를 최말단 Feature map에서 1개의 Anchor Box 사용 → Overfeat</li>
+<li>SSD에서 Anchor Box를 최말단 Feature map에서 grid당 1개의 Anchor Box 사용 → YOLO</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-Conclusion"><a href="#5-Conclusion" class="headerlink" title="5. Conclusion"></a>5. Conclusion</h1><ul>
+<li>Multiple feature map에서 multi-scale Convolutional BBox 사용함</li>
+<li>SSD512는 Faster RCNN보다 3배 빠르면서 성능이 VOC, MSCOCO, ILSVRC 모두 좋았음</li>
+<li>SSD300은 59 FPS로 실시간 물체인식 알고리즘임</li>
 </ul>
 
         </div>
@@ -351,7 +352,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/YOLO-v1/">YOLO v1</a>
+                    <a class="has-link-grey -link" href="/tags/SSD/">SSD</a>
                 </div>
             </div>
         </div>
@@ -403,16 +404,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/10/YOLO v2/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/19/darknet-Yolo-V3-Tutorial/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">YOLO v2</span>
+                <span class="level-item">darknet으로 Yolo V3 학습 Tutorial</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/30/Typora-Hexo/">
-                <span class="level-item">Typora-Hexo</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/10/papers/YOLO v2/">
+                <span class="level-item">YOLO v2</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -464,7 +465,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -484,7 +485,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -593,7 +594,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Mobilent-v3-AI-Object-Detection-Quantization-Tensorflow-Lite/" style="font-size: 10px;">Mobilent v3, AI, Object Detection, Quantization, Tensorflow Lite</a> <a href="/tags/SSD/" style="font-size: 10px;">SSD</a> <a href="/tags/Static-Generator-Hexo-Typora-Blog/" style="font-size: 10px;">Static Generator, Hexo, Typora, Blog</a> <a href="/tags/YOLO-v1/" style="font-size: 10px;">YOLO v1</a> <a href="/tags/YOLO-v2/" style="font-size: 10px;">YOLO v2</a>
+        <a href="/tags/Mobilent-v3-AI-Object-Detection-Quantization-Tensorflow-Lite/" style="font-size: 10px;">Mobilent v3, AI, Object Detection, Quantization, Tensorflow Lite</a> <a href="/tags/SSD/" style="font-size: 10px;">SSD</a> <a href="/tags/Static-Generator-Hexo-Typora-Blog/" style="font-size: 10px;">Static Generator, Hexo, Typora, Blog</a> <a href="/tags/YOLO-v1/" style="font-size: 10px;">YOLO v1</a> <a href="/tags/YOLO-v2/" style="font-size: 10px;">YOLO v2</a> <a href="/tags/darknet-tutorial-Yolo-V3/" style="font-size: 10px;">darknet, tutorial, Yolo V3</a>
     </div>
 </div>
 
@@ -610,7 +611,26 @@
         
         <article class="media">
             
-            <a href="/2019/10/19/SSD/" class="media-left">
+            <a href="/2019/10/19/darknet-Yolo-V3-Tutorial/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="darknet으로 Yolo V3 학습 Tutorial">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-19T11:45:00.000Z">2019-10-19</time></div>
+                    <a href="/2019/10/19/darknet-Yolo-V3-Tutorial/" class="has-link-black-ter is-size-6">darknet으로 Yolo V3 학습 Tutorial</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/19/papers/SSD/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="SSD">
                 </p>
@@ -619,7 +639,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-19T11:30:00.000Z">2019-10-19</time></div>
-                    <a href="/2019/10/19/SSD/" class="has-link-black-ter is-size-6">SSD</a>
+                    <a href="/2019/10/19/papers/SSD/" class="has-link-black-ter is-size-6">SSD</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -629,7 +649,7 @@
         
         <article class="media">
             
-            <a href="/2019/10/10/YOLO v2/" class="media-left">
+            <a href="/2019/10/10/papers/YOLO v2/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="YOLO v2">
                 </p>
@@ -638,7 +658,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T07:24:00.000Z">2019-10-10</time></div>
-                    <a href="/2019/10/10/YOLO v2/" class="has-link-black-ter is-size-6">YOLO v2</a>
+                    <a href="/2019/10/10/papers/YOLO v2/" class="has-link-black-ter is-size-6">YOLO v2</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -648,7 +668,7 @@
         
         <article class="media">
             
-            <a href="/2019/10/10/YOLO (You Look Only Once)/" class="media-left">
+            <a href="/2019/10/10/papers/YOLO (You Look Only Once)/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="YOLO v1">
                 </p>
@@ -657,7 +677,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T06:24:00.000Z">2019-10-10</time></div>
-                    <a href="/2019/10/10/YOLO (You Look Only Once)/" class="has-link-black-ter is-size-6">YOLO v1</a>
+                    <a href="/2019/10/10/papers/YOLO (You Look Only Once)/" class="has-link-black-ter is-size-6">YOLO v1</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -684,25 +704,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/28/Mobilenetv3/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Mobilenetv3">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-28T08:50:10.000Z">2019-07-28</time></div>
-                    <a href="/2019/07/28/Mobilenetv3/" class="has-link-black-ter is-size-6">Mobilenetv3</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -721,7 +722,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -781,6 +782,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/YOLO-v2/">
                         <span class="tag">YOLO v2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/darknet-tutorial-Yolo-V3/">
+                        <span class="tag">darknet, tutorial, Yolo V3</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -810,7 +818,26 @@
         
         <article class="media">
             
-            <a href="/2019/10/19/SSD/" class="media-left">
+            <a href="/2019/10/19/darknet-Yolo-V3-Tutorial/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="darknet으로 Yolo V3 학습 Tutorial">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-19T11:45:00.000Z">2019-10-19</time></div>
+                    <a href="/2019/10/19/darknet-Yolo-V3-Tutorial/" class="has-link-black-ter is-size-6">darknet으로 Yolo V3 학습 Tutorial</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/19/papers/SSD/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="SSD">
                 </p>
@@ -819,7 +846,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-19T11:30:00.000Z">2019-10-19</time></div>
-                    <a href="/2019/10/19/SSD/" class="has-link-black-ter is-size-6">SSD</a>
+                    <a href="/2019/10/19/papers/SSD/" class="has-link-black-ter is-size-6">SSD</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -829,7 +856,7 @@
         
         <article class="media">
             
-            <a href="/2019/10/10/YOLO v2/" class="media-left">
+            <a href="/2019/10/10/papers/YOLO v2/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="YOLO v2">
                 </p>
@@ -838,7 +865,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T07:24:00.000Z">2019-10-10</time></div>
-                    <a href="/2019/10/10/YOLO v2/" class="has-link-black-ter is-size-6">YOLO v2</a>
+                    <a href="/2019/10/10/papers/YOLO v2/" class="has-link-black-ter is-size-6">YOLO v2</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -848,7 +875,7 @@
         
         <article class="media">
             
-            <a href="/2019/10/10/YOLO (You Look Only Once)/" class="media-left">
+            <a href="/2019/10/10/papers/YOLO (You Look Only Once)/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="YOLO v1">
                 </p>
@@ -857,7 +884,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T06:24:00.000Z">2019-10-10</time></div>
-                    <a href="/2019/10/10/YOLO (You Look Only Once)/" class="has-link-black-ter is-size-6">YOLO v1</a>
+                    <a href="/2019/10/10/papers/YOLO (You Look Only Once)/" class="has-link-black-ter is-size-6">YOLO v1</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -884,25 +911,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/28/Mobilenetv3/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Mobilenetv3">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-28T08:50:10.000Z">2019-07-28</time></div>
-                    <a href="/2019/07/28/Mobilenetv3/" class="has-link-black-ter is-size-6">Mobilenetv3</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -921,7 +929,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -985,6 +993,13 @@
                     </a>
                 </div>
                 
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/darknet-tutorial-Yolo-V3/">
+                        <span class="tag">darknet, tutorial, Yolo V3</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -1002,7 +1017,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="YOLO v1" height="28">
+                    <img src="/images/logo.svg" alt="SSD" height="28">
                 
                 </a>
                 <p class="is-size-7">

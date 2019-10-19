@@ -142,6 +142,166 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-19T11:45:00.000Z">2019-10-19</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1081 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/10/19/darknet-Yolo-V3-Tutorial/">darknet으로 Yolo V3 학습 Tutorial</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="darknet으로-Yolo-V3-학습-Tutorial"><a href="#darknet으로-Yolo-V3-학습-Tutorial" class="headerlink" title="darknet으로 Yolo V3 학습 Tutorial"></a>darknet으로 Yolo V3 학습 Tutorial</h1><p>Created: Oct 17, 2019 6:26 AM<br>Tags: 실습</p>
+<p>이번 튜토리얼은 darknet framework을 사용하여 Yolo-v3 학습시키는 방법을 다룬다.</p>
+<h1 id="1-YOLO-V3-상세-—-Feature-추출기"><a href="#1-YOLO-V3-상세-—-Feature-추출기" class="headerlink" title="1. YOLO V3 상세 — Feature 추출기:"></a>1. YOLO V3 상세 — Feature 추출기:</h1><ul>
+<li>기존에 Yolo-v2에서는 Darknet-19 (19층의 CNN Layer로 구성된 baseNet)을 사용</li>
+<li>Yolo-v3로 넘어오면서 Darknet-53을 사용함<ul>
+<li>연속된 e 3 × 3 and 1 × 1 CNN 와 ResNet에 사용된 shortcut connections 사용</li>
+<li>자세한 논문은  <a href="https://pjreddie.com/media/files/papers/YOLOv3.pdf" target="_blank" rel="noopener">여기</a> 참고</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://miro.medium.com/max/303/1*7SKifRP2-eiFdZoaOLovoQ.png" alt></p>
+<h1 id="2-Yolo-v3-학습-in-Darknet-amp-Pascal-VOC"><a href="#2-Yolo-v3-학습-in-Darknet-amp-Pascal-VOC" class="headerlink" title="2. Yolo v3 학습 in Darknet &amp; Pascal VOC"></a>2. <strong>Yolo v3 학습 in Darknet &amp; Pascal VOC</strong></h1><h2 id="1-Darknet-설치"><a href="#1-Darknet-설치" class="headerlink" title="1. Darknet 설치"></a>1. Darknet 설치</h2><pre><code>git clone https://github.com/pjreddie/darknet
+cd darknet
+make</code></pre><ul>
+<li>GPU(CUDA)를 사용하려면, Makefile에서 GPU, CUDNN = 1, OPENCV = 0으로 설정 후 make</li>
+</ul>
+<h2 id="2-데이터셋-준비"><a href="#2-데이터셋-준비" class="headerlink" title="2. 데이터셋 준비"></a>2. 데이터셋 준비</h2><h3 id="Pascal-VOC-Dataset-Download"><a href="#Pascal-VOC-Dataset-Download" class="headerlink" title="Pascal VOC Dataset Download"></a>Pascal VOC Dataset Download</h3><pre><code>wget https://pjreddie.com/media/files/VOCtrainval_11-May-2012.tar
+wget https://pjreddie.com/media/files/VOCtrainval_06-Nov-2007.tar
+wget https://pjreddie.com/media/files/VOCtest_06-Nov-2007.tar
+tar xf VOCtrainval_11-May-2012.tar
+tar xf VOCtrainval_06-Nov-2007.tar
+tar xf VOCtest_06-Nov-2007.tar</code></pre><h3 id="Text-file-생성"><a href="#Text-file-생성" class="headerlink" title="Text file 생성"></a>Text file 생성</h3><ul>
+<li><p>darknet은 각 이미지마다 같은 경로에 같은 이름으로 txt파일이 필요함</p>
+  <pascal voc directory structure>
+  ~/JPEGImages/00001.png
+  ~/JPEGImages/00002.png
+  ...
+  ~/labels/00001.txt
+  ~/labels/00002.txt
+  ...
+</pascal></li>
+<li><p>txt 내용: <object-class> <x> <y> <width> <height></height></width></y></x></object-class></p>
+<p>  11 0.34419263456090654 0.611 0.4164305949008499 0.262<br>  14 0.509915014164306 0.51 0.9745042492917847 0.972</p>
+</li>
+<li><p><object-class> : [0 ~ class-1]</object-class></p>
+</li>
+<li><p><x> = <absolute_x> / <image_width>, <y> = <absolute_y> / <image_height>, <width> = <absolute_w> / <image_width>, <height> = <absolute_height> / <image_height></image_height></absolute_height></height></image_width></absolute_w></width></image_height></absolute_y></y></image_width></absolute_x></x></p>
+</li>
+<li><p>x, y는 박스의 중심점을 의미 (center-form )</p>
+</li>
+</ul>
+<p>Example</p>
+<pre><code>My Image Size: 360 * 480 it have one object ie:dog
+image_width = 360
+image_height = 480
+absolute_x = 30 (dog x position from image)
+absolute_y = 40 (dog y position from image)
+absolute_height = 200 (original height of dog from image)
+absolute_width = 200 (original width of dog from image)</code></pre><p>The final Text file have. It have five args and all five args between 0 to 1</p>
+<pre><code>&lt;class_number&gt; (&lt;absolute_x&gt; / &lt;image_width&gt;) (&lt;absolute_y&gt; / &lt;image_height&gt;)
+ (&lt;absolute_width&gt; / &lt;image_width&gt;) (&lt;absolute_height&gt; / &lt;image_height&gt;)
+ie:0 (30/360) (40/480) (200/360) (200/480)0 0.0833 0.0833 0.556 0.417</code></pre><ul>
+<li><p>Pascal은 위의 작업을 해주는 코드 실행하면 자동으로 txt 생성됨</p>
+<p>  wget <a href="https://pjreddie.com/media/files/voc_label.py" target="_blank" rel="noopener">https://pjreddie.com/media/files/voc_label.py</a><br>  python voc_label.py</p>
+</li>
+</ul>
+<h2 id="3-Training"><a href="#3-Training" class="headerlink" title="3. Training"></a>3. <strong>Training</strong></h2><h3 id="ImageNet-pretrained-weight-다운로드"><a href="#ImageNet-pretrained-weight-다운로드" class="headerlink" title="ImageNet pretrained weight 다운로드"></a>ImageNet pretrained weight 다운로드</h3><p><a href="https://pjreddie.com/darknet/imagenet/#darknet53" target="_blank" rel="noopener">darknet53</a> 모델의 사전학습된 weight 다운로드 <a href="https://pjreddie.com/media/files/darknet53.conv.74" target="_blank" rel="noopener">here (76 MB)</a>.</p>
+<h3 id="Preparing-YOLOv3-configuration-files"><a href="#Preparing-YOLOv3-configuration-files" class="headerlink" title="Preparing YOLOv3 configuration files"></a>Preparing YOLOv3 configuration files</h3><p>YOLOv3는 3가지 파일이 있어야 학습이 가능함</p>
+<p>YOLOv3 needs certain specific files to know how and what to train. We’ll be<br>creating these three files(.data, .names and .cfg) and also explain the<br>yolov3.cfg and yolov3-tiny.cfg.</p>
+<ul>
+<li><em>cfg/voc.data</em><ul>
+<li>class 갯수, trai</li>
+<li>n/validation dataset 경로 정보가 있는 텍스트 파일 주소, class 정보 (string-to-int mapping), backup (weight file 저장 경로)</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/darknet-Yolo-V3-Tutorial/Untitled-7737ca9a-3d3b-4957-9d03-ef3d50dc77e2.png" alt></p>
+<ul>
+<li><em>data/voc.names</em><ul>
+<li>클래스 이름 (순서 중요)</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/darknet-Yolo-V3-Tutorial/Untitled-38225e1f-41a6-4a03-83c3-4a892759b9cf.png" alt></p>
+<ul>
+<li>cfg/yolov3.cfg<ul>
+<li>Network 학습에 필요한 hyper-parameter, Network 구조 정의된 파일</li>
+<li>GPU ≥ 2이면 yolov3.cfg 사용. 그 이하이면 tiny-yolo.cfg 사용(GPU 2GB 미만)</li>
+</ul>
+</li>
+<li><input disabled type="checkbox"> Step 1: (tiny-yolo.cfg 인 경우)</li>
+</ul>
+<p>i) yolov3-tiny.cfg를 복사해서 yolo3-tiny-voc.cfg 로 저장</p>
+<pre><code>/YoloExample/darknet-v3/cfg$ cp yolov3-tiny.cfg yolov3-tiny-voc.cfg</code></pre><p>아래 변수를 바꿔준다.</p>
+<ul>
+<li>Line 3: set <code>batch=64</code>, 매  step마다 64개 이미지를 학습한다는 의미</li>
+<li>Line 4: set <code>subdivisions=16</code>, batch는 16만큼 나뉘어져  GPU VRAM 요구사항을 만족시키며 학습.</li>
+<li>Line 127: set <code>filters=(classes + 5)*3</code> 여기선 <code>filters=75</code></li>
+<li>Line 135: set <code>classes=20</code>, 학습할 클래스 갯수</li>
+<li>Line 171: set <code>filters=(classes + 5)*3</code> 여기선 <code>filters=75</code></li>
+<li>Line 177: set <code>classes=20</code>, 학습할 클래스 갯수</li>
+</ul>
+<p><strong>Start the Trianing with follow the step 1:</strong></p>
+<p>train.txt파일을 루트 경로에 복사한 후 아래 명령어 실행</p>
+<pre><code>~/YoloExample/darknet-v3$./darknet detector train cfg/voc.data cfg/yolov3-tiny.cfg darknet53.conv.74</code></pre><p>OUTPUT:</p>
+<p><img src="https://miro.medium.com/max/1185/1*auiui6guPcua5Io3OEgPrA.png" alt></p>
+<ul>
+<li><input disabled type="checkbox"> Step 2: (yolov3.cfg 일 경우)</li>
+</ul>
+<p>i)yolov3.cfg 복사해서 yolov3-voc.cfg 생성</p>
+<pre><code>:~/YoloExample/darknet-v3$ cd ~/YoloExample/darknet-v3/cfg$ cp yolov3.cfg yolov3-voc.cfg</code></pre><p>아래 변수를 바꿔준다.</p>
+<ul>
+<li>Line 3: set <code>batch=24</code>, this means we will be using 24 images for every training step</li>
+<li>Line 4: set <code>subdivisions=8</code>, the batch will be divided by 8 to decrease GPU VRAM requirements.</li>
+<li>Line 603: set <code>filters=(classes + 5)*3</code> in our case <code>filters=75</code></li>
+<li>Line 610: set <code>classes=20</code>, the number of categories we want to detect</li>
+<li>Line 689: set <code>filters=(classes + 5)*3</code> in our case <code>filters=75</code></li>
+<li>Line 696: set <code>classes=2</code>, the number of categories we want to detect</li>
+<li>Line 776: set <code>filters=(classes + 5)*3</code> in our case <code>filters=75</code></li>
+<li>Line 783: set <code>classes=20</code>, the number of categories we want to detect</li>
+</ul>
+<p><strong>Start the Trinaing with follow the step 2:</strong></p>
+<p>train.txt파일을 루트 경로에 복사한 후 아래 명령어 실행</p>
+<pre><code>~/YoloExample/darknet-v3$./darknet detector train cfg/voc.data cfg/yolov3-voc.cfg darknet53.conv.74</code></pre><h3 id="학습-시-주의사항"><a href="#학습-시-주의사항" class="headerlink" title="학습 시 주의사항:"></a>학습 시 주의사항:</h3><p>Weightss는 900 step이전에는 100 step마다 저장되지만,  그 이후엔 10,000 step당 저장됨. 필요시 <a href="https://github.com/pjreddie/darknet/issues/190" target="_blank" rel="noopener">link</a> 참고.</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li><a href="https://medium.com/@manivannan_data/how-to-train-yolov3-to-detect-custom-objects-ccbcafeb13d2" target="_blank" rel="noopener">https://medium.com/@manivannan_data/how-to-train-yolov3-to-detect-custom-objects-ccbcafeb13d2</a></li>
+<li><a href="http://blog.naver.com/PostView.nhn?blogId=epfam126&logNo=221444115072&categoryNo=14&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=search" target="_blank" rel="noopener">http://blog.naver.com/PostView.nhn?blogId=epfam126&amp;logNo=221444115072&amp;categoryNo=14&amp;parentCategoryNo=0&amp;viewDate=&amp;currentPage=1&amp;postListTopCurrentPage=1&amp;from=search</a></li>
+<li><a href="https://pjreddie.com/darknet/yolo/" target="_blank" rel="noopener">https://pjreddie.com/darknet/yolo/</a></li>
+<li><a href="https://medium.com/@manivannan_data/how-to-train-yolov2-to-detect-custom-objects-9010df784f36" target="_blank" rel="noopener">https://medium.com/@manivannan_data/how-to-train-yolov2-to-detect-custom-objects-9010df784f36</a></li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-10-19T11:30:00.000Z">2019-10-19</time>
                 
                 
@@ -157,7 +317,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/10/19/SSD/">SSD</a>
+                <a class="has-link-black-ter" href="/2019/10/19/papers/SSD/">SSD</a>
             
         </h1>
         <div class="content">
@@ -377,7 +537,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/10/10/YOLO v2/">YOLO v2</a>
+                <a class="has-link-black-ter" href="/2019/10/10/papers/YOLO v2/">YOLO v2</a>
             
         </h1>
         <div class="content">
@@ -558,7 +718,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/10/10/YOLO (You Look Only Once)/">YOLO v1</a>
+                <a class="has-link-black-ter" href="/2019/10/10/papers/YOLO (You Look Only Once)/">YOLO v1</a>
             
         </h1>
         <div class="content">
@@ -873,7 +1033,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/07/28/Mobilenetv3/">Mobilenetv3</a>
+                <a class="has-link-black-ter" href="/2019/07/28/papers/Mobilenetv3/">Mobilenetv3</a>
             
         </h1>
         <div class="content">
@@ -1147,7 +1307,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -1167,7 +1327,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -1276,7 +1436,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Mobilent-v3-AI-Object-Detection-Quantization-Tensorflow-Lite/" style="font-size: 10px;">Mobilent v3, AI, Object Detection, Quantization, Tensorflow Lite</a> <a href="/tags/SSD/" style="font-size: 10px;">SSD</a> <a href="/tags/Static-Generator-Hexo-Typora-Blog/" style="font-size: 10px;">Static Generator, Hexo, Typora, Blog</a> <a href="/tags/YOLO-v1/" style="font-size: 10px;">YOLO v1</a> <a href="/tags/YOLO-v2/" style="font-size: 10px;">YOLO v2</a>
+        <a href="/tags/Mobilent-v3-AI-Object-Detection-Quantization-Tensorflow-Lite/" style="font-size: 10px;">Mobilent v3, AI, Object Detection, Quantization, Tensorflow Lite</a> <a href="/tags/SSD/" style="font-size: 10px;">SSD</a> <a href="/tags/Static-Generator-Hexo-Typora-Blog/" style="font-size: 10px;">Static Generator, Hexo, Typora, Blog</a> <a href="/tags/YOLO-v1/" style="font-size: 10px;">YOLO v1</a> <a href="/tags/YOLO-v2/" style="font-size: 10px;">YOLO v2</a> <a href="/tags/darknet-tutorial-Yolo-V3/" style="font-size: 10px;">darknet, tutorial, Yolo V3</a>
     </div>
 </div>
 
@@ -1293,7 +1453,26 @@
         
         <article class="media">
             
-            <a href="/2019/10/19/SSD/" class="media-left">
+            <a href="/2019/10/19/darknet-Yolo-V3-Tutorial/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="darknet으로 Yolo V3 학습 Tutorial">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-19T11:45:00.000Z">2019-10-19</time></div>
+                    <a href="/2019/10/19/darknet-Yolo-V3-Tutorial/" class="has-link-black-ter is-size-6">darknet으로 Yolo V3 학습 Tutorial</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/19/papers/SSD/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="SSD">
                 </p>
@@ -1302,7 +1481,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-19T11:30:00.000Z">2019-10-19</time></div>
-                    <a href="/2019/10/19/SSD/" class="has-link-black-ter is-size-6">SSD</a>
+                    <a href="/2019/10/19/papers/SSD/" class="has-link-black-ter is-size-6">SSD</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -1312,7 +1491,7 @@
         
         <article class="media">
             
-            <a href="/2019/10/10/YOLO v2/" class="media-left">
+            <a href="/2019/10/10/papers/YOLO v2/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="YOLO v2">
                 </p>
@@ -1321,7 +1500,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T07:24:00.000Z">2019-10-10</time></div>
-                    <a href="/2019/10/10/YOLO v2/" class="has-link-black-ter is-size-6">YOLO v2</a>
+                    <a href="/2019/10/10/papers/YOLO v2/" class="has-link-black-ter is-size-6">YOLO v2</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -1331,7 +1510,7 @@
         
         <article class="media">
             
-            <a href="/2019/10/10/YOLO (You Look Only Once)/" class="media-left">
+            <a href="/2019/10/10/papers/YOLO (You Look Only Once)/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="YOLO v1">
                 </p>
@@ -1340,7 +1519,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T06:24:00.000Z">2019-10-10</time></div>
-                    <a href="/2019/10/10/YOLO (You Look Only Once)/" class="has-link-black-ter is-size-6">YOLO v1</a>
+                    <a href="/2019/10/10/papers/YOLO (You Look Only Once)/" class="has-link-black-ter is-size-6">YOLO v1</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -1367,25 +1546,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/28/Mobilenetv3/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Mobilenetv3">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-28T08:50:10.000Z">2019-07-28</time></div>
-                    <a href="/2019/07/28/Mobilenetv3/" class="has-link-black-ter is-size-6">Mobilenetv3</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1404,7 +1564,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1464,6 +1624,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/YOLO-v2/">
                         <span class="tag">YOLO v2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/darknet-tutorial-Yolo-V3/">
+                        <span class="tag">darknet, tutorial, Yolo V3</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1493,7 +1660,26 @@
         
         <article class="media">
             
-            <a href="/2019/10/19/SSD/" class="media-left">
+            <a href="/2019/10/19/darknet-Yolo-V3-Tutorial/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="darknet으로 Yolo V3 학습 Tutorial">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-19T11:45:00.000Z">2019-10-19</time></div>
+                    <a href="/2019/10/19/darknet-Yolo-V3-Tutorial/" class="has-link-black-ter is-size-6">darknet으로 Yolo V3 학습 Tutorial</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/19/papers/SSD/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="SSD">
                 </p>
@@ -1502,7 +1688,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-19T11:30:00.000Z">2019-10-19</time></div>
-                    <a href="/2019/10/19/SSD/" class="has-link-black-ter is-size-6">SSD</a>
+                    <a href="/2019/10/19/papers/SSD/" class="has-link-black-ter is-size-6">SSD</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -1512,7 +1698,7 @@
         
         <article class="media">
             
-            <a href="/2019/10/10/YOLO v2/" class="media-left">
+            <a href="/2019/10/10/papers/YOLO v2/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="YOLO v2">
                 </p>
@@ -1521,7 +1707,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T07:24:00.000Z">2019-10-10</time></div>
-                    <a href="/2019/10/10/YOLO v2/" class="has-link-black-ter is-size-6">YOLO v2</a>
+                    <a href="/2019/10/10/papers/YOLO v2/" class="has-link-black-ter is-size-6">YOLO v2</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -1531,7 +1717,7 @@
         
         <article class="media">
             
-            <a href="/2019/10/10/YOLO (You Look Only Once)/" class="media-left">
+            <a href="/2019/10/10/papers/YOLO (You Look Only Once)/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="YOLO v1">
                 </p>
@@ -1540,7 +1726,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T06:24:00.000Z">2019-10-10</time></div>
-                    <a href="/2019/10/10/YOLO (You Look Only Once)/" class="has-link-black-ter is-size-6">YOLO v1</a>
+                    <a href="/2019/10/10/papers/YOLO (You Look Only Once)/" class="has-link-black-ter is-size-6">YOLO v1</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -1567,25 +1753,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/28/Mobilenetv3/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Mobilenetv3">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-28T08:50:10.000Z">2019-07-28</time></div>
-                    <a href="/2019/07/28/Mobilenetv3/" class="has-link-black-ter is-size-6">Mobilenetv3</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1604,7 +1771,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1664,6 +1831,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/YOLO-v2/">
                         <span class="tag">YOLO v2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/darknet-tutorial-Yolo-V3/">
+                        <span class="tag">darknet, tutorial, Yolo V3</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
