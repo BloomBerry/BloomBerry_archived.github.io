@@ -2,24 +2,19 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Mobilenetv3 - BloomBerry&#39;s Tech Blog</title>
+<title>Tag: SSD - BloomBerry&#39;s Tech Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<link rel="canonical" href="https://BloomBerry.github.io/2019/07/28/mobilenetv3/">
+<link rel="canonical" href="https://BloomBerry.github.io/tags/ssd/">
 
-    <meta name="description" content="Searching for Mobilenet V32019.05.09  Andrew Howard, et. al. from Google AI AbstractMobilenet V3는 hardware-aware NAS (Neural Architecture Search)기법인 NetAdapt을 사용하여 타겟하는 Mobile Device CPU에서 Latency를 줄임">
-<meta name="keywords" content="Mobilent v3, AI, Object Detection, Quantization, Tensorflow Lite">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Mobilenetv3">
-<meta property="og:url" content="https://BloomBerry.github.io/2019/07/28/Mobilenetv3/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="BloomBerry&#39;s Tech Blog">
+<meta property="og:url" content="https://BloomBerry.github.io/tags/SSD/index.html">
 <meta property="og:site_name" content="BloomBerry&#39;s Tech Blog">
-<meta property="og:description" content="Searching for Mobilenet V32019.05.09  Andrew Howard, et. al. from Google AI AbstractMobilenet V3는 hardware-aware NAS (Neural Architecture Search)기법인 NetAdapt을 사용하여 타겟하는 Mobile Device CPU에서 Latency를 줄임">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://bloomberry.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-07-28T12:50:48.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mobilenetv3">
-<meta name="twitter:description" content="Searching for Mobilenet V32019.05.09  Andrew Howard, et. al. from Google AI AbstractMobilenet V3는 hardware-aware NAS (Neural Architecture Search)기법인 NetAdapt을 사용하여 타겟하는 Mobile Device CPU에서 Latency를 줄임">
+<meta name="twitter:title" content="BloomBerry&#39;s Tech Blog">
 <meta name="twitter:image" content="https://bloomberry.github.io/images/og_image.png">
 
 
@@ -95,7 +90,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Mobilenetv3" height="28">
+                <img src="/images/logo.svg" alt="BloomBerry&#39;s Tech Blog" height="28">
             
             </a>
         </div>
@@ -141,18 +136,29 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">SSD</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-28T08:50:10.000Z">2019-07-28</time>
+                <time class="level-item has-text-grey" datetime="2019-10-19T11:30:00.000Z">2019-10-19</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    14 minutes read (About 2113 words)
+                    10 minutes read (About 1507 words)
                 </span>
                 
                 
@@ -161,232 +167,191 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Mobilenetv3
+                <a class="has-link-black-ter" href="/2019/10/19/SSD/">SSD</a>
             
         </h1>
         <div class="content">
-            <h2 id="Searching-for-Mobilenet-V3"><a href="#Searching-for-Mobilenet-V3" class="headerlink" title="Searching for Mobilenet V3"></a>Searching for Mobilenet V3</h2><h3 id="2019-05-09-Andrew-Howard-et-al-from-Google-AI"><a href="#2019-05-09-Andrew-Howard-et-al-from-Google-AI" class="headerlink" title="2019.05.09  Andrew Howard, et. al. from Google AI"></a>2019.05.09  Andrew Howard, et. al. from Google AI</h3><p><img src="/images/Mobilenetv3/a.png" alt></p>
-<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Mobilenet V3는 hardware-aware NAS (Neural Architecture Search)기법인 <strong>NetAdapt</strong>을 사용하여 타겟하는 Mobile Device CPU에서 Latency를 줄임과 동시에 성능을 끌어올릴 수 있음을 보였다는데 의의가 있다.</p>
-<p>본 논문에서는 Mobilenet V3를 Mobilenet V3-Large와 MobilenetV3-Small 두 가지 버전으로 나누어 <strong>Classification</strong>, <strong>Object Detection</strong>과 <strong>Semantic Segmentation</strong>을  수행하였다. Segmantic Segmentation의 경우는 LR-SPP (Lite Reduced-Spatial Pyramid  Pooling)라는 새로운 Decoder구조를 제안하였다. 실험 결과 MobilenetV3-Lage의  Classification은 MobilenetV2에 비해 ImageNet에서 Top-1 accuracy가 3.2% 향상됨과 동시에  Latency가 15% 감소하였다.(MobilenetV3-Small은 accuracy 4.6% 감소)</p>
-<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><p>이 논문은 모바일 디바이스 상에서 속도-성능간 trade-off를 최적화하기 위한 방안들을 다룬다.</p>
-<ol>
-<li>Complementary Search Engine : Latency &amp; Accuracy를 목표값으로 NAS (Neural Architecture Search)를 진행함.</li>
-<li>모바일 셋팅에 최적화된 형태의 비선형 함수 <strong>H-swish</strong> 함수 사용</li>
-<li>새로운 network 구조 제안 : Inverted Resudial + Squeeze-and-Excite</li>
-<li>새로운 Segmentation Decoder (LR-SPP)</li>
-</ol>
-<h2 id="2-Related-Work"><a href="#2-Related-Work" class="headerlink" title="2. Related Work"></a>2. Related Work</h2><p>Accuracy-Latency 최적화를 위한 다양한 연구 결과를 요약하면 다음과 같다.</p>
-<ol>
-<li>SqueezeNet : 1x1 conv로 parameter 수를 줄임</li>
-<li>Mobilenet V1 : Depthwise Separable conv로 channel-wise 곱셈 paremeter 를 줄임</li>
-<li>Mobilenet V2 : Inverted Residual과 Linear Bottleneck을 사용하여 모바일 디바이스 상에서 효율적인  구조 채택</li>
-<li>ShuffleNet : Group conv + Channel shuffle을 사용하여 MAC 를 줄임</li>
-<li>CondenseNet : Group Conv에 사용될 connections를 학습함</li>
-<li>ShiftNet : Shift operation을 point-wise conv와 사용하여 계산량이 많은 Spatial conv 대체</li>
-</ol>
-<h2 id="3-Efficient-Mobile-Building-Blocks"><a href="#3-Efficient-Mobile-Building-Blocks" class="headerlink" title="3. Efficient Mobile Building Blocks"></a>3. Efficient Mobile Building Blocks</h2><p>MnasNet은 Mobilenet V2의 bottleneck 기본 뼈대에서 squeeze-and-excite구조와 <strong>light attention module</strong>을 추가한 구조를 채택하고 있다. </p>
-<p>Mobilenet V3는 MnasNet구조에서 <strong>swish non-linearity</strong>로 업데이트하였으며, fixed-point arithmetic구조에서 비효율적인 sigmoid를 <strong>hard sigmoid</strong> 구조를 채택하였다.</p>
-<p><img src="/images/Mobilenetv3/b.png" alt></p>
-<h2 id="4-Network-Search"><a href="#4-Network-Search" class="headerlink" title="4. Network Search"></a>4. Network Search</h2><p>Network Search는 network의 최적 Block를 찾는데 <strong>Platform-aware NAS</strong>와 Layer 수 최적화를 위한 <strong>NetAdapt 알고리즘</strong>을 사용한다.</p>
-<h3 id="4-1-Platform-Aware-NAS-for-Block-wise-Search"><a href="#4-1-Platform-Aware-NAS-for-Block-wise-Search" class="headerlink" title="4.1 Platform-Aware NAS for Block-wise Search"></a>4.1 Platform-Aware NAS for Block-wise Search</h3><p>Platform-Aware NAS는 <em>[43] MnasNet: Platform-Aware Nerual Architecture Search for Mobile</em> 에서 다루고 있는 다중목적 보상함수를 사용하고 있다.<br>$$<br>ACC[m]×[LAT[m]/TAR]^w<br>$$<br>위 식은 Parto-optimal solution을 최적화하기 위해 Target Latency [<em>TAR]항을 분모로 모델 m에 대하여 Accuracy [ACC[m]]와 Latency[LAT[m]] 항을 사용한다. *w은 ACC와 *LAT</em> 간의 비율을 조정하는 항이다.</p>
-<p>기존 논문 [43]에서는 <em>w</em>=-0.07를 사용하였지만, 본 논문에서는 작은 모델에 최적화하도록 <em>LAT\</em>에 weight를 더 주기 위해 w=-0.15를 주어 모델 m을 찾는다.</p>
-<h3 id="4-2-NetAdapt-for-Layer-wise-Search"><a href="#4-2-NetAdapt-for-Layer-wise-Search" class="headerlink" title="4.2 NetAdapt for Layer-wise Search"></a>4.2 NetAdapt for Layer-wise Search</h3><p>NetAdapt는 *[46] Netadapt: Platform-Aware neural network adaptation for mobile applications*에서 다루고 있다. 요약하면,</p>
-<ol>
-<li><p>4.1절에서 다중목적 보상 NAS로 찾은 seed architecture로 시작한다.</p>
-</li>
-<li><p>각 step에 대해서</p>
-<ol>
-<li>새로운 <em>proposal</em>을 제안한다. 이때, proposal은 이전 step에서의 model에 비해 latency가 최소한계치 δ 만큼 감소시켜야 한다.<ul>
-<li>δ=0.01L</li>
-<li><em>L</em>= seed model의 Latency</li>
+            <h1 id><a href="#" class="headerlink" title></a></h1><h1 id="Single-Shot-Multibox-Detector"><a href="#Single-Shot-Multibox-Detector" class="headerlink" title="Single Shot Multibox Detector"></a>Single Shot Multibox Detector</h1><ul>
+<li>Created: Oct 17, 2019 12:23 PM</li>
+<li>Tags: 논문</li>
+</ul>
+<h1 id="0-Background"><a href="#0-Background" class="headerlink" title="0. Background"></a>0. Background</h1><ul>
+<li>‘15.12 Archive 등재</li>
+<li>Wei Liu, et. al</li>
+</ul>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><ul>
+<li>Aspect Ratio, Scales를 feature map마다 별개로 둔 앵커 박스를 생성<ul>
+<li>다양한 크기로 출현하는 물체를 인식하기 위함</li>
 </ul>
 </li>
-<li>Pretrained weight 값으로 이전 step에서 사용한 model 중 truncated된 부분을 제외한 부분을  채택하며, 새로 생성된 layer는 randomly initialized시킨다. Proposal한 model들을 <em>T</em> step만큼 fine tuning을 거치고 accuracy를 생성한다.<ul>
-<li><em>T</em>=10,000를 사용</li>
+<li>Single Neural Network의 출력은 앵커박스로 이산화</li>
+<li>Prediction 시, 물체의 클래스 probability score와 앵커 박스로부터 조정될 크기 값을 출력</li>
+<li>Input: 300x300) Pascal VOC 207 test : 74.3 mAP // 59 FPS@TitanX (Faster RCNN: 73.2mAP // 7 FPS, YOLO: 63.4mAP)</li>
 </ul>
-</li>
-<li>Evaluation Metric을 통해 proposal된 model들 중 최고의 proposal model을 찾는다.<ul>
-<li>Eval Metric =<em>max</em> $$Δ|ACC|\overΔLAT$$<ul>
-<li>Insight: Proposal이 discrete하기 때문에 trade-off curve slope를 최대화 함</li>
+<h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h1><h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<li>Single Shot Detector (YOLO) 보다 정확하고, slower techiques (Faster R-CNN)보다 빠른 실시간 물체인식 알고리즘 제안</li>
+<li>고정된 Anchor-Box 기준으로 offset과 score를 추출하기 위해 Feature map에 Convolution Layer를 추가한 구조</li>
+<li>서로 독립적인 Feature map에서 scale, aspect ratio를 바꿔서 정확도 향상시킴</li>
+<li>Pascal VOC, COCO, ILSVRC 비교하여 성능&amp;속도 trade-off 향상됨을 입증함</li>
 </ul>
-</li>
-<li>Proposal 시 변경 가능한 요소들<ul>
-<li>Expansion Layer 크기</li>
-<li>Bottleneck 크기</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>Target Latency에 도달할 때까지 1~2 과정을 반복한다.</p>
-</li>
-</ol>
-<h2 id="5-Network-Improvements"><a href="#5-Network-Improvements" class="headerlink" title="5. Network Improvements"></a>5. Network Improvements</h2><p>Network Search로 찾은 모델을 더 개선하기 위해 계산량이 많은 Layer를 변경하고, Quantization frinedly한 H-swish 비선형 함수를 제안한다.</p>
-<h3 id="5-1-Redesigning-Expensive-Layers"><a href="#5-1-Redesigning-Expensive-Layers" class="headerlink" title="5.1 Redesigning Expensive Layers"></a>5.1 Redesigning Expensive Layers</h3><p>N기존  Network Search로 찾은 모델은 시작, 끝 Layer에서 유독 많은 계산량을 보였다. 이는 기존 Network  Search Method의 search space를 벗어나는 부분으로, 수동 tuning을 하여 Accuracy는 불변하고,  Latency를 줄여주었다.</p>
-<ol>
-<li>Final Layer</li>
-</ol>
-<p><img src="/images/Mobilenetv3/c.png" alt></p>
+<h1 id="2-The-Single-Shot-Detector-SSD"><a href="#2-The-Single-Shot-Detector-SSD" class="headerlink" title="2. The Single Shot Detector (SSD)"></a>2. The Single Shot Detector (SSD)</h1><p><img src="/images/SSD/Untitled-c2817ebb-d3bc-460c-8aac-35ff4d554929.png" alt></p>
 <ul>
-<li><strong>7×7</strong> Conv Layer into <strong>Average pooling Layer</strong><ul>
-<li>Same Accuracy</li>
-<li>10 ms Latency (15% of running time) &amp; 30MAdds drop</li>
+<li>4x4 &amp; 8x8 Feature Map에서 생성된 anchor-box 예시.</li>
+<li>각각 빨간색, 파란색 anchor-box는 G.T.인 개, 고양이와 matching되어 positive anchorbox, 나머진 nregative anchorbox로 (배경으로) 학습이 됨</li>
+<li>목적함수(Loss)는 confidance loss + localization loss의 합계</li>
 </ul>
-</li>
-</ul>
-<ol start="2">
-<li>Initial Layer channel<ul>
-<li>32 channel into 16 channel</li>
-<li>Non-linearity Function : swish or ReLU</li>
-<li>Same Accuracy</li>
-<li>3 ms Latency &amp; 10MAdds drop</li>
-</ul>
-</li>
-</ol>
-<h3 id="5-2-Nonlinearities"><a href="#5-2-Nonlinearities" class="headerlink" title="5.2 Nonlinearities"></a>5.2 Nonlinearities</h3><p>swish는 *[36] Searching for Activation Function*에서 제안한 비선형 함수로 ReLU를 대체하여 neural network의 accuracy를 향상시킨다. 이때, sigmoid σ(x)를 사용하기에 계산량의 증가가 있다.<br>$$<br>swish(x)=x⋅σ(x)<br>$$<br>sigmoid 함수 σ(x)의 계산량을 모바일 디바이스 상에서 줄이기 위한 두 가지 방법을 제안한다.</p>
-<ol>
-<li>h-swish</li>
-</ol>
-<p><img src="/images/Mobilenetv3/d.png" alt><br>$$<br>h−swish[x]=x\frac{ReLU6(x+3)}6<br>$$</p>
+<h2 id="2-1-Model"><a href="#2-1-Model" class="headerlink" title="2-1. Model"></a>2-1. Model</h2><p><img src="/images/SSD/Untitled-2ced08bf-260b-4360-9fe9-a944f724eb2d.png" alt></p>
 <ul>
-<li>ReLU6는 어떤 Hardware / Software platform에서도 최적화가 가능하다.</li>
-<li>Framework마다 Sigmoid 구현하는데 따른 numerical precision loss를 없앨 수 있다.</li>
-<li>Quantized Sigmoid조차도 ReLU보다 느리다.</li>
+<li>전반부 (BaseNet): 이미지로부터 높은 해상도의 feature map 추출<ul>
+<li>VGG 16 사용</li>
 </ul>
-<p>위 세 가지 이유로, sigmoid 함수를 ReLU6로 바꾼다.</p>
-<ol start="2">
-<li>h-swish 후 배치</li>
-</ol>
-<p>비선형 함수로 인한 Latency는 뒤로 갈 수록 feature-map의 크기가 줄어듦에 따라 감소한다. 따라서, h-swish를 network의 뒤에만 배치하는 것이 더 효과적임을 실험적으로 구했다.</p>
-<p><img src="/images/Mobilenetv3/e.png" alt></p>
-<p>위에 언급한 최적화를 사용함에도 불구하고, h-swish는 여전히  latency가 존재한다. 그럼에도 accuracy-latency tradeoff가 긍정적이고, 향후 software optimize에 따른 성능 향상을 염두하여 Network의 뒷부분에 H-swish 비선형 함수를 사용한다.</p>
+</li>
+<li>후반부 (Detection Head): 물체 인식 출력 값 생성<ul>
+<li>다양한 크기의 Feature-map: Output Stride 8, 16, 32, 64, 128, 256 사용</li>
+<li>Convolution Predictor를 검출기로 활용함<ul>
+<li><em>m</em> x <em>n</em> 크기의 Feature-map이 채널 크기가 <em>p</em>일 경우 <em>3</em> x <em>3</em> x <em>p</em> 개의 커널로 생성함</li>
+<li>Grid 당 <em>k</em> anchor box일 경우, 출력 갯수는 <em>kmn</em>(<em>c+4</em>)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-Training"><a href="#2-2-Training" class="headerlink" title="2-2. Training"></a>2-2. Training</h2><ul>
+<li><p>매칭 전략</p>
 <ul>
-<li>ReLU와 같은 linear 함수 사용 시, latency bottleneck은 메모리 접근 시 발생함. 효과적으로 메모리 배치 시 최적화 가능함.</li>
-</ul>
-<h4 id="5-2-1-Large-Squeeze-and-Excite"><a href="#5-2-1-Large-Squeeze-and-Excite" class="headerlink" title="5.2.1. Large Squeeze-and-Excite"></a>5.2.1. Large Squeeze-and-Excite</h4><ul>
-<li>MnasNet 논문에서는 Squeeze-and-excite의 channel은 convolution layer의 채널 수에  상대적이었다. 하지만, 본 논문에서는 Expansion Layer의 1/4 사이즈로 고정시켰다. 이로 인한 accuracy는  향상한 반면, parameter는 소폭만 증가헀다.</li>
-</ul>
-<h3 id="5-3-Mobilenet-V3-Definition"><a href="#5-3-Mobilenet-V3-Definition" class="headerlink" title="5.3 Mobilenet V3 Definition"></a>5.3 Mobilenet V3 Definition</h3><p>Mobilenet V3 - Large 구조는 아래와 같다. (Mobilenet-Small은 위 Table 2 참고)*</p>
-<p><img src="/images/Mobilenetv3/f.png" alt></p>
-<h2 id="6-Experiments"><a href="#6-Experiments" class="headerlink" title="6. Experiments"></a>6. Experiments</h2><ul>
-<li>비교 대상: Accuracy vs. Latecny &amp; MAdds (Multiply adds)</li>
-<li>Training setup<ul>
-<li>학습 환경 : 4x4 TPU Pod </li>
-<li>Optimizer : RMSPropOptimizer with 0.9 Momentum (Tensorflow)</li>
-<li>Batch size: 4,096 (128 images per chip)</li>
-<li>Learning Rate 스케줄 : 0.01 initial rate of decaying 0.01 every 3 step</li>
-<li>dropout : 0.8</li>
-<li>l2 weight decay 1e-5</li>
-<li>Exponential moving Average with 0.9999 decay</li>
-<li>Batch Norm : average decay of 0.99</li>
+<li>Highest jaccard overlap이 되는 앵커박스를 GT와 매칭</li>
+<li>Threshold 0.5이상을 추가로 매칭</li>
+<li>Recall을 높이기 위해(?)</li>
 </ul>
 </li>
-<li>Latency Measurement<ul>
-<li>Hardware: Google Pixel phones</li>
-<li>Framework: Tensorflow Lite Benchmark Tool</li>
-<li>Core 갯수: Single</li>
-</ul>
-</li>
-</ul>
-<h3 id="6-1-Classification"><a href="#6-1-Classification" class="headerlink" title="6.1 Classification"></a>6.1 Classification</h3><ul>
-<li>Dataset: ImageNet</li>
-</ul>
-<h3 id="6-2-Result"><a href="#6-2-Result" class="headerlink" title="6.2 Result"></a>6.2 Result</h3><p><img src="/images/Mobilenetv3/g.png" alt="Float32 결과"></p>
+<li><p>목표함수</p>
 <ul>
-<li>Mobilenet V3-Large 1.0 성능(Accuracy) &gt; SOTA Mobile Device Target 모델</li>
-<li>Mobilenet V3-Small 0.75 지연시간(Latency) &lt; SOTA  Mobile Device Target 모델</li>
+<li>x는 matched index 0이면 unmatched, 1은 matched.</li>
+<li>N은 matching된 앵커박스 갯수</li>
+<li>c는 class probability</li>
 </ul>
-<p><img src="/images/Mobilenetv3/h.png" alt="Quantization 결과"></p>
-<p><img src="/images/Mobilenetv3/i.png" alt="Multiplier&amp;Resolution 변화에 따른 Accuracy vs. Latency TradeOff"></p>
+</li>
+</ul>
+<p><img src="/images/SSD/Untitled-4e515659-5bca-4ca3-bfd9-0af62d4b0970.png" alt></p>
 <ul>
-<li>이미지 해상도(Resolution)이 큰 Mobilenet-V3-Small이 Mobilenet-V3-Large보다 미세하게 성능이 우수함. 하지만, 이미지 해상도는 보통 결정된 값이기에 큰 의미는 없는듯</li>
+<li>위치 손실<ul>
+<li>L1손실함수. 추정 박스(l)과 GT박스(g)간의 차이를 손실값으로 봄</li>
+<li>앵커박스의 중심(dcx,dcy)와의 offset을 학습하도록 구현됨</li>
+<li>너비(dwi), 높이(dhi)로 정규화시킴</li>
+<li>모두 matching된 앵커박스만 손실값으로 봄</li>
 </ul>
-<h4 id="6-2-1-Ablation-Study"><a href="#6-2-1-Ablation-Study" class="headerlink" title="6.2.1 Ablation Study"></a>6.2.1 Ablation Study</h4><p><img src="/images/Mobilenetv3/j.png" alt="h-swish vs. ReLU"></p>
+</li>
+</ul>
+<p><img src="/images/SSD/Untitled-e61fbee7-3a6c-4b8c-8dcc-2bce14a4212b.png" alt></p>
 <ul>
-<li>전체 Network를 H-swish로 대체하면 성능-속도 trade-off가 좋지 않음 <ul>
-<li>성능 증가 (0.9%)</li>
-<li>속도 감소 (-32%)</li>
+<li>분류 손실</li>
+<li>매칭된 앵커박스(positive)와 매칭 안된 앵커박스(negative)의 비율을 1:3 으로 학습</li>
+<li>더 안정적으로 학습됨</li>
 </ul>
-</li>
-<li>Network 뒷부분만 교체하면 성능-속도 trade-off가 조아짐<ul>
-<li>성능 증가(0.7%)</li>
-<li>속도 감소 (-12%)</li>
-</ul>
-</li>
-<li>크게 의미 없는 수치같음…</li>
-</ul>
-<h3 id="6-2-Detection"><a href="#6-2-Detection" class="headerlink" title="6.2 Detection"></a>6.2 Detection</h3><ul>
-<li><p>Datset: MsCOCO</p>
-</li>
-<li><p>OD Architecture : SSD Lite (OS 16 ~ OS256)</p>
-</li>
-<li><p>OS 16 (C4) </p>
+<p><img src="/images/SSD/Untitled-496ecf18-2287-4940-b26c-b9b9d04b5346.png" alt></p>
 <ul>
-<li>MobilenetV3-Lage 13th bottleneck block</li>
-<li>MobileentV3-Small 9th bottleneck block</li>
+<li>Feature map의 grid에서 생성된 박스는 반드시 receptive field가 아님.</li>
+<li>Scale값을 조정해서 앵커박스의 크기를 조절할 수 있음</li>
+<li>m개의 feature map일 때, linear scaling rule 적용하여 scale 산출</li>
 </ul>
-</li>
-<li><p>OS 32 (C5)</p>
-</li>
-<li><p>After pooling layer (Small &amp; Large)</p>
-</li>
-<li><p>Reduced Channel into Half </p>
+<p><img src="/images/SSD/Untitled-e3670a91-f948-40bb-b98f-fb4151bdd440.png" alt></p>
 <ul>
-<li>ImageNet의 클래스 수 (1,000)에 비해 MsCOCO의 클래스 수 (80)이 작기에 기존 channel 수는 redundunt하다고 여김</li>
-<li>실제로 성능하락 없이 속도 향상(15%)만 가져옴</li>
-<li>Mobilent V2와 동일한 성능 (22.0 mAP vs. 22.1 mAP)이면서 빠른 속도 (150 ms vs. 200 ms) 25% 속도 향상 보임</li>
+<li>다양한 위치, 크기의 물체를 견고히 인식하기 위해 data augmentation기법 적용<ul>
+<li>Horizontal flip, Random patch, image distortion, etc</li>
 </ul>
-<p><img src="/images/Mobilenetv3/l.png" alt="채널 수 감소에 따른 속도&amp;성능 변화"></p>
 </li>
+<li>Basenet은 vgg16 사용</li>
 </ul>
-<h3 id="6-4-Semantic-Segmentation"><a href="#6-4-Semantic-Segmentation" class="headerlink" title="6.4 Semantic Segmentation"></a>6.4 Semantic Segmentation</h3><ul>
-<li><p>Dataset : CityScapes Fine Images (mIOU)</p>
-</li>
-<li><p>Pretraiend Model 사용 x</p>
-</li>
-<li><p>Channel 절반 사용 (OD와 동일한 이유)</p>
+<h1 id="3-Experimental-Results"><a href="#3-Experimental-Results" class="headerlink" title="3. Experimental Results"></a>3. Experimental Results</h1><h2 id="3-1-Pascal-VOC2007"><a href="#3-1-Pascal-VOC2007" class="headerlink" title="3-1. Pascal VOC2007"></a>3-1. Pascal VOC2007</h2><ul>
+<li>Pascal voc 2012 test 결과 : 81.6mAP</li>
+<li>COCO pretrained+512x512+voc12 trainval 학습셋으로 사용</li>
+</ul>
+<p><img src="/images/SSD/Untitled-e1ee7b3b-6000-442c-a74e-f1ec289fbd8d.png" alt></p>
+<h2 id="3-2-Model-analysis"><a href="#3-2-Model-analysis" class="headerlink" title="3-2. Model analysis"></a>3-2. Model analysis</h2><ul>
+<li>Data Augmentation에 의한 성능 향상이 앞도적으로 높았음 (8.8% mAP 향상)</li>
+<li>Anchor Box의 모양을 다양화한게 성능 향상에 도움이 됨</li>
+<li>Atrous Conv을 사용함으로써 성능은 유지하되, 속도 향상이 있었음 (20% 향상)</li>
+</ul>
+<p><img src="/images/SSD/Untitled-bdf55de2-1e9b-475f-989c-4b814dbbd0df.png" alt></p>
 <ul>
-<li>CityScapes 클래스 19 &lt;&lt; ImageNet 클래스 1,000</li>
+<li>흰색은 True Positive, 파란색(Local error) 빨간색(Class error)은 True Negative  보라색은 False Positive</li>
+<li>빨간 실선은 (IOU Threshold=0.5) Recall, 점선은 (IOU Threshold=0.1) Recall</li>
 </ul>
-</li>
-<li><p>LR-ASPP (Lite Reduced design of Atrous Spatial Pyramid Pooling module)</p>
+<p><img src="/images/SSD/Untitled-58110c17-e27e-4787-a73f-3e0e4c2c4b7f.png" alt></p>
 <ul>
-<li>1x1 conv + Global Average Pooling Layer (+ Squeeze-and-Excite)<ul>
-<li>Pooling Layer에 더 큰 stride, kernerl을 사용함</li>
+<li>Localization error가 작음.</li>
+<li>위치 regression잘 한다는 뜻</li>
+<li>Classification error가 큼.</li>
+<li>검출기 head를 localization과 공유하기 때문</li>
 </ul>
-</li>
-</ul>
-</li>
-<li><p>마지막 Layer에 Atrous conv.와 skip connection을 사용함.</p>
-</li>
-</ul>
-<p><img src="/images/Mobilenetv3/m.png" alt="LR-ASPP 구조"></p>
-<p><img src="/images/Mobilenetv3/o.png" alt="CityScapes Val Set Result"></p>
-<p><img src="/images/Mobilenetv3/p.png" alt="CityScapes Test set Result"></p>
+<p><img src="/images/SSD/Untitled-6559f053-9124-4a42-847b-42d5c37e2949.png" alt></p>
 <ul>
-<li>Mobilenet V3-Large: ESPNet v2, CCC2, ESPNetv1보다 각각 10.5%, 10.6%, 12.3% 성능 향상 + 무게 감소 (Madds)</li>
-<li>Mobilenet V3-Small: ESPNet v2, CCC2, ESPNetv1보다 각각 1.7, 1.59, 2.24 배 속도 향상 + 6.2% 성능 향상</li>
+<li><p>작은 물체를 더 못 검출.</p>
+<p>  <img src="/images/SSD/Untitled-6a03567b-98d5-404e-8fb8-104f21aecdf0.png" alt></p>
+</li>
+<li><p>작은 물체를 검출하는 layer가 한참후에 detection head로 들어오므로, 정보손실 발생하기 때문.</p>
+</li>
 </ul>
-<h2 id="7-Conclusion"><a href="#7-Conclusion" class="headerlink" title="7. Conclusion"></a>7. Conclusion</h2><ul>
-<li>Classificaiton, Object Detection, Semantic Segmentation 모두 좋은 결과를 보임</li>
-<li>Mobile model의 차세대 Network 제시<ul>
-<li>비선형 함수 h-swish 사용</li>
-<li>양자화에 친화적인 Squeeze-and-Excite 사용</li>
-<li>LR-ASPP 선보임.</li>
+<h2 id="3-3-Pascal-VOC2012"><a href="#3-3-Pascal-VOC2012" class="headerlink" title="3-3. Pascal VOC2012"></a>3-3. Pascal VOC2012</h2><ul>
+<li>COCO로  pretrained시킴</li>
+<li>VOC07 train/val/test + VOC12 train/val 데이터를 학습용으로 사용</li>
+<li>Faster RCNN보다 성능 높음</li>
+</ul>
+<p><img src="/images/SSD/Untitled-538d9e44-705b-4d4c-8e37-ba0cbc8488cd.png" alt></p>
+<h2 id="3-4-COCO"><a href="#3-4-COCO" class="headerlink" title="3-4. COCO"></a>3-4. COCO</h2><ul>
+<li>Pascal VOC와 비슷한 양상임.</li>
+<li>작은 물체는 큰 물체에 비해 상대적으로 성능 향상이 적었음</li>
+</ul>
+<p><img src="/images/SSD/Untitled-57c8b169-4ad4-4795-b105-96d04f3ed6e3.png" alt></p>
+<h2 id="3-5-Preliminary-ILSVRC-results"><a href="#3-5-Preliminary-ILSVRC-results" class="headerlink" title="3-5. Preliminary ILSVRC results"></a>3-5. Preliminary ILSVRC results</h2><ul>
+<li>ILSVRC 2014 DET 데이터로 학습함</li>
+<li>43.4mAP</li>
+</ul>
+<h2 id="3-6-Data-Augmentation-for-Small-Object-Accuracy"><a href="#3-6-Data-Augmentation-for-Small-Object-Accuracy" class="headerlink" title="3-6. Data Augmentation for Small Object Accuracy"></a>3-6. Data Augmentation for Small Object Accuracy</h2><ul>
+<li>Random Crop은 Zoom In 효과를 줌</li>
+<li>Zoom Out 효과를 주기 위해 기존 이미지를 16배 키운 사이즈로 중간값으로 나머지 부분 채운후 학습.</li>
+</ul>
+<p><img src="/images/SSD/Untitled-ea55bea1-5f63-41fc-acf3-1e61759f02f3.png" alt></p>
+<ul>
+<li>2-3 mAP 향상 있었음</li>
+</ul>
+<p><img src="/images/SSD/Untitled-5db3ed12-33bc-46c3-8f59-cf71061035f7.png" alt></p>
+<p><img src="/images/SSD/Untitled-5c86dd11-ba73-4c2a-ad0d-da05a4132cb6.png" alt></p>
+<h2 id="3-7-Inference-Time"><a href="#3-7-Inference-Time" class="headerlink" title="3-7. Inference Time"></a>3-7. Inference Time</h2><p><img src="/images/SSD/Untitled-47b2924d-8e22-4957-9c47-4e71454b89ce.png" alt></p>
+<ul>
+<li>Inference 시간을 효율적으로 하기 위해 Confidence Threshold 0.01 이하 Anchor Box는 걸름</li>
+<li>그 이후 NMS를 IOU Threshold 0.5로 주고 Max Output Box 갯수를 200으로 함<ul>
+<li>1.7ms 소요 (새로 추가한 Layer들은 2.4ms 소요)</li>
 </ul>
 </li>
+</ul>
+<h1 id="4-Related-Work"><a href="#4-Related-Work" class="headerlink" title="4. Related Work"></a>4. Related Work</h1><ul>
+<li>Selective Search<ul>
+<li>Image(R-CNN) 혹은 feature map(Fast-RCNN, MultiBox)을 crop한 후, Fixed size로 reshape하는 작업이 필요함.</li>
+<li>여러개의 잠재 Bounding Box에 대해 별도의 Classifier, Regressor를 둠으로써 속도 저하</li>
+</ul>
+</li>
+<li>Region Proposal Network<ul>
+<li>Faster-RCNN에서 Anchor Box와 함께 처음 사용됨.</li>
+<li>CNN의 출력 feature map을 RPN의 입력으로 사용하여 CNN을 통과시켜 자동으로 Region Propose함.</li>
+<li>뒤에 Classifier, Regressor를 별도로 둠으로써 두 단계를 거침.<ul>
+<li>Classifier, Regressor없이 바로 Classification하면 SSD와 같음.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>One-shot Detector<ul>
+<li>SSD에서 Anchor Box를 최말단 Feature map에서 1개의 Anchor Box 사용 → Overfeat</li>
+<li>SSD에서 Anchor Box를 최말단 Feature map에서 grid당 1개의 Anchor Box 사용 → YOLO</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-Conclusion"><a href="#5-Conclusion" class="headerlink" title="5. Conclusion"></a>5. Conclusion</h1><ul>
+<li>Multiple feature map에서 multi-scale Convolutional BBox 사용함</li>
+<li>SSD512는 Faster RCNN보다 3배 빠르면서 성능이 VOC, MSCOCO, ILSVRC 모두 좋았음</li>
+<li>SSD300은 59 FPS로 실시간 물체인식 알고리즘임</li>
 </ul>
 
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Mobilent-v3-AI-Object-Detection-Quantization-Tensorflow-Lite/">Mobilent v3, AI, Object Detection, Quantization, Tensorflow Lite</a>
-                </div>
-            </div>
         </div>
         
         
@@ -396,55 +361,9 @@
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
-        <div class="buttons is-centered">
-            
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
-
-<div class="notification is-danger">
-    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/07/30/Typora-Hexo/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Typora-Hexo</span>
-            </a>
-        </div>
-        
-        
-    </div>
-</div>
 
 
 </div>
@@ -1028,7 +947,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Mobilenetv3" height="28">
+                    <img src="/images/logo.svg" alt="BloomBerry&#39;s Tech Blog" height="28">
                 
                 </a>
                 <p class="is-size-7">
