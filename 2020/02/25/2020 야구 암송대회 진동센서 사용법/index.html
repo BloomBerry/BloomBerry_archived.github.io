@@ -16,7 +16,7 @@
 <meta property="og:description" content="2020 야구 암송대회 진동센서 사용법Created: Feb 19, 2020 12:04 AM 1. 목적본 문서의 목적은 빛과진리교회에서 매년 진행하는 야구 성경암송대회에 사용될 “야구공 타격감지  시스템”을 구축하고, 운영하는 방법에 관한 메뉴얼을 제공하는데 있다. 문서는 다음i과 같이 구성된다.  시스템 구성도 센서모듈 통신모듈 운영모듈    2. 시스템">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://bloomberry.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2020-02-25T14:27:35.021Z">
+<meta property="og:updated_time" content="2020-02-25T14:32:03.078Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2020 야구 암송대회 진동센서 사용법">
 <meta name="twitter:description" content="2020 야구 암송대회 진동센서 사용법Created: Feb 19, 2020 12:04 AM 1. 목적본 문서의 목적은 빛과진리교회에서 매년 진행하는 야구 성경암송대회에 사용될 “야구공 타격감지  시스템”을 구축하고, 운영하는 방법에 관한 메뉴얼을 제공하는데 있다. 문서는 다음i과 같이 구성된다.  시스템 구성도 센서모듈 통신모듈 운영모듈    2. 시스템">
@@ -152,7 +152,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    17 minutes read (About 2580 words)
+                    17 minutes read (About 2582 words)
                 </span>
                 
                 
@@ -495,8 +495,12 @@ Serial.println(&quot;client disonnected&quot;);
 
             greeting = await websocket.recv()
             print(f&quot;&lt; &quot;, greeting)
+            asyncio.get_event_loop().run_until_complete(hello())
 
-    <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">asyncio.get_event_loop().run_until_complete(hello())</span><br></pre></td></tr></table></figure></code></pre><ul>
+    ```
+
+​    
+​    </code></pre><ul>
 <li>시연 영상</li>
 </ul>
 <p><a href="2020/__200224.mp4">/images/2020 야구 암송대회 진동센서 사용법/__200224.mp4</a></p>
