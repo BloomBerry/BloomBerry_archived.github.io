@@ -2,19 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Tag: Mobilent v3, AI, Object Detection, Quantization, Tensorflow Lite - BloomBerry&#39;s Tech Blog</title>
+<title>Gradient-Harmonized-SSD-Tutorial - BloomBerry&#39;s Tech Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<link rel="canonical" href="https://BloomBerry.github.io/tags/mobilent-v3-ai-object-detection-quantization-tensorflow-lite/">
+<link rel="canonical" href="https://BloomBerry.github.io/2019/11/02/gradient-harmonized-ssd-tutorial/">
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="BloomBerry&#39;s Tech Blog">
-<meta property="og:url" content="https://BloomBerry.github.io/tags/Mobilent-v3-AI-Object-Detection-Quantization-Tensorflow-Lite/index.html">
+    <meta name="description" content="Gradient Harmonized SSD 실습Created: Oct 30, 2019 8:05 AMTags: 실습 MMdetection API저자 소개 및 수상 경력 Multimedia Lab. The Chinese University of Hong Kong (CUHK) COCO 2018 Challenge (Instance Segmentation / Obj">
+<meta name="keywords" content="darknet, tutorial, Gradient-Harmonized-SSD Tutorial">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gradient-Harmonized-SSD-Tutorial">
+<meta property="og:url" content="https://BloomBerry.github.io/2019/11/02/Gradient-Harmonized-SSD-Tutorial/index.html">
 <meta property="og:site_name" content="BloomBerry&#39;s Tech Blog">
+<meta property="og:description" content="Gradient Harmonized SSD 실습Created: Oct 30, 2019 8:05 AMTags: 실습 MMdetection API저자 소개 및 수상 경력 Multimedia Lab. The Chinese University of Hong Kong (CUHK) COCO 2018 Challenge (Instance Segmentation / Obj">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://bloomberry.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-11-02T02:40:35.268Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BloomBerry&#39;s Tech Blog">
+<meta name="twitter:title" content="Gradient-Harmonized-SSD-Tutorial">
+<meta name="twitter:description" content="Gradient Harmonized SSD 실습Created: Oct 30, 2019 8:05 AMTags: 실습 MMdetection API저자 소개 및 수상 경력 Multimedia Lab. The Chinese University of Hong Kong (CUHK) COCO 2018 Challenge (Instance Segmentation / Obj">
 <meta name="twitter:image" content="https://bloomberry.github.io/images/og_image.png">
 
 
@@ -90,7 +95,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="BloomBerry&#39;s Tech Blog" height="28">
+                <img src="/images/logo.svg" alt="Gradient-Harmonized-SSD-Tutorial" height="28">
             
             </a>
         </div>
@@ -136,29 +141,18 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Mobilent v3, AI, Object Detection, Quantization, Tensorflow Lite</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-28T08:50:10.000Z">2019-07-28</time>
+                <time class="level-item has-text-grey" datetime="2019-11-02T02:37:00.000Z">2019-11-02</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    14 minutes read (About 2113 words)
+                    3 minutes read (About 485 words)
                 </span>
                 
                 
@@ -167,223 +161,119 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/07/28/papers/Mobilenetv3/">Mobilenetv3</a>
+                Gradient-Harmonized-SSD-Tutorial
             
         </h1>
         <div class="content">
-            <h2 id="Searching-for-Mobilenet-V3"><a href="#Searching-for-Mobilenet-V3" class="headerlink" title="Searching for Mobilenet V3"></a>Searching for Mobilenet V3</h2><h3 id="2019-05-09-Andrew-Howard-et-al-from-Google-AI"><a href="#2019-05-09-Andrew-Howard-et-al-from-Google-AI" class="headerlink" title="2019.05.09  Andrew Howard, et. al. from Google AI"></a>2019.05.09  Andrew Howard, et. al. from Google AI</h3><p><img src="/images/Mobilenetv3/a.png" alt></p>
-<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Mobilenet V3는 hardware-aware NAS (Neural Architecture Search)기법인 <strong>NetAdapt</strong>을 사용하여 타겟하는 Mobile Device CPU에서 Latency를 줄임과 동시에 성능을 끌어올릴 수 있음을 보였다는데 의의가 있다.</p>
-<p>본 논문에서는 Mobilenet V3를 Mobilenet V3-Large와 MobilenetV3-Small 두 가지 버전으로 나누어 <strong>Classification</strong>, <strong>Object Detection</strong>과 <strong>Semantic Segmentation</strong>을  수행하였다. Segmantic Segmentation의 경우는 LR-SPP (Lite Reduced-Spatial Pyramid  Pooling)라는 새로운 Decoder구조를 제안하였다. 실험 결과 MobilenetV3-Lage의  Classification은 MobilenetV2에 비해 ImageNet에서 Top-1 accuracy가 3.2% 향상됨과 동시에  Latency가 15% 감소하였다.(MobilenetV3-Small은 accuracy 4.6% 감소)</p>
-<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><p>이 논문은 모바일 디바이스 상에서 속도-성능간 trade-off를 최적화하기 위한 방안들을 다룬다.</p>
-<ol>
-<li>Complementary Search Engine : Latency &amp; Accuracy를 목표값으로 NAS (Neural Architecture Search)를 진행함.</li>
-<li>모바일 셋팅에 최적화된 형태의 비선형 함수 <strong>H-swish</strong> 함수 사용</li>
-<li>새로운 network 구조 제안 : Inverted Resudial + Squeeze-and-Excite</li>
-<li>새로운 Segmentation Decoder (LR-SPP)</li>
-</ol>
-<h2 id="2-Related-Work"><a href="#2-Related-Work" class="headerlink" title="2. Related Work"></a>2. Related Work</h2><p>Accuracy-Latency 최적화를 위한 다양한 연구 결과를 요약하면 다음과 같다.</p>
-<ol>
-<li>SqueezeNet : 1x1 conv로 parameter 수를 줄임</li>
-<li>Mobilenet V1 : Depthwise Separable conv로 channel-wise 곱셈 paremeter 를 줄임</li>
-<li>Mobilenet V2 : Inverted Residual과 Linear Bottleneck을 사용하여 모바일 디바이스 상에서 효율적인  구조 채택</li>
-<li>ShuffleNet : Group conv + Channel shuffle을 사용하여 MAC 를 줄임</li>
-<li>CondenseNet : Group Conv에 사용될 connections를 학습함</li>
-<li>ShiftNet : Shift operation을 point-wise conv와 사용하여 계산량이 많은 Spatial conv 대체</li>
-</ol>
-<h2 id="3-Efficient-Mobile-Building-Blocks"><a href="#3-Efficient-Mobile-Building-Blocks" class="headerlink" title="3. Efficient Mobile Building Blocks"></a>3. Efficient Mobile Building Blocks</h2><p>MnasNet은 Mobilenet V2의 bottleneck 기본 뼈대에서 squeeze-and-excite구조와 <strong>light attention module</strong>을 추가한 구조를 채택하고 있다. </p>
-<p>Mobilenet V3는 MnasNet구조에서 <strong>swish non-linearity</strong>로 업데이트하였으며, fixed-point arithmetic구조에서 비효율적인 sigmoid를 <strong>hard sigmoid</strong> 구조를 채택하였다.</p>
-<p><img src="/images/Mobilenetv3/b.png" alt></p>
-<h2 id="4-Network-Search"><a href="#4-Network-Search" class="headerlink" title="4. Network Search"></a>4. Network Search</h2><p>Network Search는 network의 최적 Block를 찾는데 <strong>Platform-aware NAS</strong>와 Layer 수 최적화를 위한 <strong>NetAdapt 알고리즘</strong>을 사용한다.</p>
-<h3 id="4-1-Platform-Aware-NAS-for-Block-wise-Search"><a href="#4-1-Platform-Aware-NAS-for-Block-wise-Search" class="headerlink" title="4.1 Platform-Aware NAS for Block-wise Search"></a>4.1 Platform-Aware NAS for Block-wise Search</h3><p>Platform-Aware NAS는 <em>[43] MnasNet: Platform-Aware Nerual Architecture Search for Mobile</em> 에서 다루고 있는 다중목적 보상함수를 사용하고 있다.<br>$$<br>ACC[m]×[LAT[m]/TAR]^w<br>$$<br>위 식은 Parto-optimal solution을 최적화하기 위해 Target Latency [<em>TAR]항을 분모로 모델 m에 대하여 Accuracy [ACC[m]]와 Latency[LAT[m]] 항을 사용한다. *w은 ACC와 *LAT</em> 간의 비율을 조정하는 항이다.</p>
-<p>기존 논문 [43]에서는 <em>w</em>=-0.07를 사용하였지만, 본 논문에서는 작은 모델에 최적화하도록 <em>LAT\</em>에 weight를 더 주기 위해 w=-0.15를 주어 모델 m을 찾는다.</p>
-<h3 id="4-2-NetAdapt-for-Layer-wise-Search"><a href="#4-2-NetAdapt-for-Layer-wise-Search" class="headerlink" title="4.2 NetAdapt for Layer-wise Search"></a>4.2 NetAdapt for Layer-wise Search</h3><p>NetAdapt는 *[46] Netadapt: Platform-Aware neural network adaptation for mobile applications*에서 다루고 있다. 요약하면,</p>
-<ol>
-<li><p>4.1절에서 다중목적 보상 NAS로 찾은 seed architecture로 시작한다.</p>
-</li>
-<li><p>각 step에 대해서</p>
-<ol>
-<li>새로운 <em>proposal</em>을 제안한다. 이때, proposal은 이전 step에서의 model에 비해 latency가 최소한계치 δ 만큼 감소시켜야 한다.<ul>
-<li>δ=0.01L</li>
-<li><em>L</em>= seed model의 Latency</li>
+            <h1 id="Gradient-Harmonized-SSD-실습"><a href="#Gradient-Harmonized-SSD-실습" class="headerlink" title="Gradient Harmonized SSD 실습"></a>Gradient Harmonized SSD 실습</h1><p>Created: Oct 30, 2019 8:05 AM<br>Tags: 실습</p>
+<h1 id="MMdetection-API"><a href="#MMdetection-API" class="headerlink" title="MMdetection API"></a>MMdetection API</h1><h2 id="저자-소개-및-수상-경력"><a href="#저자-소개-및-수상-경력" class="headerlink" title="저자 소개 및 수상 경력"></a>저자 소개 및 수상 경력</h2><ul>
+<li>Multimedia Lab. The Chinese University of Hong Kong (CUHK)</li>
+<li>COCO 2018 Challenge (Instance Segmentation / Object Detection task) 1등</li>
+<li>COCO 2019 Challenge (Object Mask) 3등</li>
 </ul>
-</li>
-<li>Pretrained weight 값으로 이전 step에서 사용한 model 중 truncated된 부분을 제외한 부분을  채택하며, 새로 생성된 layer는 randomly initialized시킨다. Proposal한 model들을 <em>T</em> step만큼 fine tuning을 거치고 accuracy를 생성한다.<ul>
-<li><em>T</em>=10,000를 사용</li>
-</ul>
-</li>
-<li>Evaluation Metric을 통해 proposal된 model들 중 최고의 proposal model을 찾는다.<ul>
-<li>Eval Metric =<em>max</em> $$Δ|ACC|\overΔLAT$$<ul>
-<li>Insight: Proposal이 discrete하기 때문에 trade-off curve slope를 최대화 함</li>
-</ul>
-</li>
-<li>Proposal 시 변경 가능한 요소들<ul>
-<li>Expansion Layer 크기</li>
-<li>Bottleneck 크기</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>Target Latency에 도달할 때까지 1~2 과정을 반복한다.</p>
-</li>
-</ol>
-<h2 id="5-Network-Improvements"><a href="#5-Network-Improvements" class="headerlink" title="5. Network Improvements"></a>5. Network Improvements</h2><p>Network Search로 찾은 모델을 더 개선하기 위해 계산량이 많은 Layer를 변경하고, Quantization frinedly한 H-swish 비선형 함수를 제안한다.</p>
-<h3 id="5-1-Redesigning-Expensive-Layers"><a href="#5-1-Redesigning-Expensive-Layers" class="headerlink" title="5.1 Redesigning Expensive Layers"></a>5.1 Redesigning Expensive Layers</h3><p>N기존  Network Search로 찾은 모델은 시작, 끝 Layer에서 유독 많은 계산량을 보였다. 이는 기존 Network  Search Method의 search space를 벗어나는 부분으로, 수동 tuning을 하여 Accuracy는 불변하고,  Latency를 줄여주었다.</p>
-<ol>
-<li>Final Layer</li>
-</ol>
-<p><img src="/images/Mobilenetv3/c.png" alt></p>
+<h2 id="API-특징"><a href="#API-특징" class="headerlink" title="API 특징"></a>API 특징</h2><ul>
+<li><p>학습 및 테스트하는 툴 제공</p>
 <ul>
-<li><strong>7×7</strong> Conv Layer into <strong>Average pooling Layer</strong><ul>
-<li>Same Accuracy</li>
-<li>10 ms Latency (15% of running time) &amp; 30MAdds drop</li>
+<li><a href="https://github.com/open-mmlab/mmdetection" target="_blank" rel="noopener">https://github.com/open-mmlab/mmdetection</a></li>
+<li>테스트: tools/test.py</li>
 </ul>
 </li>
-</ul>
-<ol start="2">
-<li>Initial Layer channel<ul>
-<li>32 channel into 16 channel</li>
-<li>Non-linearity Function : swish or ReLU</li>
-<li>Same Accuracy</li>
-<li>3 ms Latency &amp; 10MAdds drop</li>
-</ul>
-</li>
-</ol>
-<h3 id="5-2-Nonlinearities"><a href="#5-2-Nonlinearities" class="headerlink" title="5.2 Nonlinearities"></a>5.2 Nonlinearities</h3><p>swish는 *[36] Searching for Activation Function*에서 제안한 비선형 함수로 ReLU를 대체하여 neural network의 accuracy를 향상시킨다. 이때, sigmoid σ(x)를 사용하기에 계산량의 증가가 있다.<br>$$<br>swish(x)=x⋅σ(x)<br>$$<br>sigmoid 함수 σ(x)의 계산량을 모바일 디바이스 상에서 줄이기 위한 두 가지 방법을 제안한다.</p>
-<ol>
-<li>h-swish</li>
-</ol>
-<p><img src="/images/Mobilenetv3/d.png" alt><br>$$<br>h−swish[x]=x\frac{ReLU6(x+3)}6<br>$$</p>
+<li><p>학습에 필요한 기능이 모듈별로 세분화</p>
 <ul>
-<li>ReLU6는 어떤 Hardware / Software platform에서도 최적화가 가능하다.</li>
-<li>Framework마다 Sigmoid 구현하는데 따른 numerical precision loss를 없앨 수 있다.</li>
-<li>Quantized Sigmoid조차도 ReLU보다 느리다.</li>
+<li>datasets: build_dataset으로 타겟 데이터셋 loader 호출</li>
+<li>models: build_detector로 타겟 물체인식 모델 호출</li>
+<li>apis<ul>
+<li>init_dist: mpi, pytorch,등 학습 back-end engine 지정</li>
+<li>train_detector: 분산학습 유무, logging 유무 지정</li>
+<li></li>
+<li>get_random_seed: 임의 초기 Seed 값 호출</li>
+<li>get_root_logger: working directory 경로, 데이터셋 경로 등 지정</li>
 </ul>
-<p>위 세 가지 이유로, sigmoid 함수를 ReLU6로 바꾼다.</p>
-<ol start="2">
-<li>h-swish 후 배치</li>
-</ol>
-<p>비선형 함수로 인한 Latency는 뒤로 갈 수록 feature-map의 크기가 줄어듦에 따라 감소한다. 따라서, h-swish를 network의 뒤에만 배치하는 것이 더 효과적임을 실험적으로 구했다.</p>
-<p><img src="/images/Mobilenetv3/e.png" alt></p>
-<p>위에 언급한 최적화를 사용함에도 불구하고, h-swish는 여전히  latency가 존재한다. 그럼에도 accuracy-latency tradeoff가 긍정적이고, 향후 software optimize에 따른 성능 향상을 염두하여 Network의 뒷부분에 H-swish 비선형 함수를 사용한다.</p>
+</li>
+</ul>
+</li>
+<li><p>Argument: 학습 환경에 맞는 argument를 쉽게 바꾸도록 함</p>
 <ul>
-<li>ReLU와 같은 linear 함수 사용 시, latency bottleneck은 메모리 접근 시 발생함. 효과적으로 메모리 배치 시 최적화 가능함.</li>
-</ul>
-<h4 id="5-2-1-Large-Squeeze-and-Excite"><a href="#5-2-1-Large-Squeeze-and-Excite" class="headerlink" title="5.2.1. Large Squeeze-and-Excite"></a>5.2.1. Large Squeeze-and-Excite</h4><ul>
-<li>MnasNet 논문에서는 Squeeze-and-excite의 channel은 convolution layer의 채널 수에  상대적이었다. 하지만, 본 논문에서는 Expansion Layer의 1/4 사이즈로 고정시켰다. 이로 인한 accuracy는  향상한 반면, parameter는 소폭만 증가헀다.</li>
-</ul>
-<h3 id="5-3-Mobilenet-V3-Definition"><a href="#5-3-Mobilenet-V3-Definition" class="headerlink" title="5.3 Mobilenet V3 Definition"></a>5.3 Mobilenet V3 Definition</h3><p>Mobilenet V3 - Large 구조는 아래와 같다. (Mobilenet-Small은 위 Table 2 참고)*</p>
-<p><img src="/images/Mobilenetv3/f.png" alt></p>
-<h2 id="6-Experiments"><a href="#6-Experiments" class="headerlink" title="6. Experiments"></a>6. Experiments</h2><ul>
-<li>비교 대상: Accuracy vs. Latecny &amp; MAdds (Multiply adds)</li>
-<li>Training setup<ul>
-<li>학습 환경 : 4x4 TPU Pod </li>
-<li>Optimizer : RMSPropOptimizer with 0.9 Momentum (Tensorflow)</li>
-<li>Batch size: 4,096 (128 images per chip)</li>
-<li>Learning Rate 스케줄 : 0.01 initial rate of decaying 0.01 every 3 step</li>
-<li>dropout : 0.8</li>
-<li>l2 weight decay 1e-5</li>
-<li>Exponential moving Average with 0.9999 decay</li>
-<li>Batch Norm : average decay of 0.99</li>
-</ul>
-</li>
-<li>Latency Measurement<ul>
-<li>Hardware: Google Pixel phones</li>
-<li>Framework: Tensorflow Lite Benchmark Tool</li>
-<li>Core 갯수: Single</li>
+<li>gpu: GPU 갯수 지정</li>
+<li>workdir: 학습된 모델 weight, log 저장소</li>
+<li>resume_from: pretrained weight 호출경로</li>
 </ul>
 </li>
 </ul>
-<h3 id="6-1-Classification"><a href="#6-1-Classification" class="headerlink" title="6.1 Classification"></a>6.1 Classification</h3><ul>
-<li>Dataset: ImageNet</li>
+<h2 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h2><h3 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h3><ul>
+<li>Nvidia GPU P-100 8대<ul>
+<li>nccl back-end</li>
 </ul>
-<h3 id="6-2-Result"><a href="#6-2-Result" class="headerlink" title="6.2 Result"></a>6.2 Result</h3><p><img src="/images/Mobilenetv3/g.png" alt="Float32 결과"></p>
+</li>
+<li>Batch size = 2</li>
+</ul>
+<h3 id="Hyerparameter"><a href="#Hyerparameter" class="headerlink" title="Hyerparameter"></a>Hyerparameter</h3><ul>
+<li>GHM-C Loss<ul>
+<li>M (number of Unit Region) = 30</li>
+</ul>
+</li>
+<li>GHM-R Loss (ASL1 loss)<ul>
+<li>mu : 0.02</li>
+</ul>
+</li>
+<li>Image size: 1333 by 800 (paper just mentioned 800)</li>
+<li>Optimizer : SGD<ul>
+<li>learning rate: 0.01 → 0.001 (9epoch) → 0.0001 (12epoch) step decay w/ warm-up</li>
+</ul>
+</li>
+<li>epoch: 14</li>
+</ul>
+<h3 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h3><ul>
+<li>baseNet: ResNext-101 w/ 64</li>
+<li>neck: same as RetinaNet (FPN)</li>
+<li>bbox head: same as RetinaNet</li>
+</ul>
+<h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><ul>
+<li>MsCOCO 2017<ul>
+<li>train 122k</li>
+<li>val 5K</li>
+</ul>
+</li>
+</ul>
+<h2 id="E-T-C"><a href="#E-T-C" class="headerlink" title="E.T.C."></a>E.T.C.</h2><ul>
+<li>mmcv error<ul>
+<li>mmcv: pip install -e</li>
+<li>mmcv Path PYTHONPATH 추가</li>
+</ul>
+</li>
+<li>mmdet error “ImportError: cannot import name ‘deform_conv_cuda”<ul>
+<li>mmdet: python setup.py install → build → develop</li>
+</ul>
+</li>
+</ul>
+<h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><ul>
+<li>MsCOCO Eval Dataset</li>
+<li>Epoch: 9 epoch (Same as the paper)</li>
+<li>Conf. Threshold : 0.05 → 0.1<ul>
+<li>Max nms_Pre : 1,000 → 500</li>
+</ul>
+</li>
+</ul>
+<p><img src="_screenshot_31-4b423715-2636-4892-a189-7049830f9098.10.2019.png" alt></p>
+<p><img src="2_screenshot_31-a5ec1435-0ff7-4fcb-8be5-3a46d0044be1.10.2019.png" alt></p>
+<p><img src="3_screenshot_31-99fcf893-b29c-400f-a36a-b663ea8c1976.10.2019.png" alt></p>
+<p><img src="4_screenshot_31-e4390d19-9521-48c9-8480-b1ef78f39d8a.10.2019.png" alt></p>
+<p><img src="5_screenshot_31-72816c61-076f-4d76-bdfa-df65f997c379.10.2019.png" alt></p>
 <ul>
-<li>Mobilenet V3-Large 1.0 성능(Accuracy) &gt; SOTA Mobile Device Target 모델</li>
-<li>Mobilenet V3-Small 0.75 지연시간(Latency) &lt; SOTA  Mobile Device Target 모델</li>
+<li>eval</li>
 </ul>
-<p><img src="/images/Mobilenetv3/h.png" alt="Quantization 결과"></p>
-<p><img src="/images/Mobilenetv3/i.png" alt="Multiplier&amp;Resolution 변화에 따른 Accuracy vs. Latency TradeOff"></p>
-<ul>
-<li>이미지 해상도(Resolution)이 큰 Mobilenet-V3-Small이 Mobilenet-V3-Large보다 미세하게 성능이 우수함. 하지만, 이미지 해상도는 보통 결정된 값이기에 큰 의미는 없는듯</li>
-</ul>
-<h4 id="6-2-1-Ablation-Study"><a href="#6-2-1-Ablation-Study" class="headerlink" title="6.2.1 Ablation Study"></a>6.2.1 Ablation Study</h4><p><img src="/images/Mobilenetv3/j.png" alt="h-swish vs. ReLU"></p>
-<ul>
-<li>전체 Network를 H-swish로 대체하면 성능-속도 trade-off가 좋지 않음 <ul>
-<li>성능 증가 (0.9%)</li>
-<li>속도 감소 (-32%)</li>
-</ul>
-</li>
-<li>Network 뒷부분만 교체하면 성능-속도 trade-off가 조아짐<ul>
-<li>성능 증가(0.7%)</li>
-<li>속도 감소 (-12%)</li>
-</ul>
-</li>
-<li>크게 의미 없는 수치같음…</li>
-</ul>
-<h3 id="6-2-Detection"><a href="#6-2-Detection" class="headerlink" title="6.2 Detection"></a>6.2 Detection</h3><ul>
-<li><p>Datset: MsCOCO</p>
-</li>
-<li><p>OD Architecture : SSD Lite (OS 16 ~ OS256)</p>
-</li>
-<li><p>OS 16 (C4) </p>
-<ul>
-<li>MobilenetV3-Lage 13th bottleneck block</li>
-<li>MobileentV3-Small 9th bottleneck block</li>
-</ul>
-</li>
-<li><p>OS 32 (C5)</p>
-</li>
-<li><p>After pooling layer (Small &amp; Large)</p>
-</li>
-<li><p>Reduced Channel into Half </p>
-<ul>
-<li>ImageNet의 클래스 수 (1,000)에 비해 MsCOCO의 클래스 수 (80)이 작기에 기존 channel 수는 redundunt하다고 여김</li>
-<li>실제로 성능하락 없이 속도 향상(15%)만 가져옴</li>
-<li>Mobilent V2와 동일한 성능 (22.0 mAP vs. 22.1 mAP)이면서 빠른 속도 (150 ms vs. 200 ms) 25% 속도 향상 보임</li>
-</ul>
-<p><img src="/images/Mobilenetv3/l.png" alt="채널 수 감소에 따른 속도&amp;성능 변화"></p>
-</li>
-</ul>
-<h3 id="6-4-Semantic-Segmentation"><a href="#6-4-Semantic-Segmentation" class="headerlink" title="6.4 Semantic Segmentation"></a>6.4 Semantic Segmentation</h3><ul>
-<li><p>Dataset : CityScapes Fine Images (mIOU)</p>
-</li>
-<li><p>Pretraiend Model 사용 x</p>
-</li>
-<li><p>Channel 절반 사용 (OD와 동일한 이유)</p>
-<ul>
-<li>CityScapes 클래스 19 &lt;&lt; ImageNet 클래스 1,000</li>
-</ul>
-</li>
-<li><p>LR-ASPP (Lite Reduced design of Atrous Spatial Pyramid Pooling module)</p>
-<ul>
-<li>1x1 conv + Global Average Pooling Layer (+ Squeeze-and-Excite)<ul>
-<li>Pooling Layer에 더 큰 stride, kernerl을 사용함</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>마지막 Layer에 Atrous conv.와 skip connection을 사용함.</p>
-</li>
-</ul>
-<p><img src="/images/Mobilenetv3/m.png" alt="LR-ASPP 구조"></p>
-<p><img src="/images/Mobilenetv3/o.png" alt="CityScapes Val Set Result"></p>
-<p><img src="/images/Mobilenetv3/p.png" alt="CityScapes Test set Result"></p>
-<ul>
-<li>Mobilenet V3-Large: ESPNet v2, CCC2, ESPNetv1보다 각각 10.5%, 10.6%, 12.3% 성능 향상 + 무게 감소 (Madds)</li>
-<li>Mobilenet V3-Small: ESPNet v2, CCC2, ESPNetv1보다 각각 1.7, 1.59, 2.24 배 속도 향상 + 6.2% 성능 향상</li>
-</ul>
-<h2 id="7-Conclusion"><a href="#7-Conclusion" class="headerlink" title="7. Conclusion"></a>7. Conclusion</h2><ul>
-<li>Classificaiton, Object Detection, Semantic Segmentation 모두 좋은 결과를 보임</li>
-<li>Mobile model의 차세대 Network 제시<ul>
-<li>비선형 함수 h-swish 사용</li>
-<li>양자화에 친화적인 Squeeze-and-Excite 사용</li>
-<li>LR-ASPP 선보임.</li>
-</ul>
-</li>
-</ul>
+<p>Average Precision (AP) @[ IoU=0.50:0.95 | area= all | maxDets=100 ] = 0.538<br>Average Precision (AP) @[ IoU=0.50 | area= all | maxDets=100 ] = 0.745<br>Average Precision (AP) @[ IoU=0.75 | area= all | maxDets=100 ] = 0.585<br>Average Precision (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.397<br>Average Precision (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.598<br>Average Precision (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.664<br>Average Recall (AR) @[ IoU=0.50:0.95 | area= all | maxDets= 1 ] = 0.403<br>Average Recall (AR) @[ IoU=0.50:0.95 | area= all | maxDets= 10 ] = 0.637<br>Average Recall (AR) @[ IoU=0.50:0.95 | area= all | maxDets=100 ] = 0.667<br>Average Recall (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.507<br>Average Recall (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.723<br>Average Recall (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.809</p>
+<p>→ 논문 대비 성능 향상 (mAP 12%)</p>
 
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/darknet-tutorial-Gradient-Harmonized-SSD-Tutorial/">darknet, tutorial, Gradient-Harmonized-SSD Tutorial</a>
+                </div>
+            </div>
         </div>
         
         
@@ -393,9 +283,62 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/25/2020 야구 암송대회 진동센서 사용법/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item"></span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/19/darknet-Yolo-V3-Tutorial/">
+                <span class="level-item">darknet으로 Yolo V3 학습 Tutorial</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
@@ -1051,7 +994,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="BloomBerry&#39;s Tech Blog" height="28">
+                    <img src="/images/logo.svg" alt="Gradient-Harmonized-SSD-Tutorial" height="28">
                 
                 </a>
                 <p class="is-size-7">
