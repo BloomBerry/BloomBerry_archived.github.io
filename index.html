@@ -142,13 +142,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-11-06T13:05:10.623Z">2020-11-06</time>
+                <time class="level-item has-text-grey" datetime="2020-11-06T13:49:00.000Z">2020-11-06</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes read (About 1303 words)
+                    8 minutes read (About 1247 words)
                 </span>
                 
                 
@@ -157,11 +157,11 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/11/06/papers/Tesla의 auto-pilot beta 버전 논문 리뷰/"></a>
+                <a class="has-link-black-ter" href="/2020/11/06/papers/Tesla의 auto-pilot beta 버전 논문 리뷰/">Tesla의 auto-pilot beta 버전 논문 리뷰</a>
             
         </h1>
         <div class="content">
-            <h1 id="Tesla의-auto-pilot-beta-버전-논문-리뷰"><a href="#Tesla의-auto-pilot-beta-버전-논문-리뷰" class="headerlink" title="Tesla의 auto-pilot beta 버전 논문 리뷰"></a>Tesla의 auto-pilot beta 버전 논문 리뷰</h1><h1 id="Pseudo-LiDAR-from-Visual-Depth-Estimation-Bridging-the-Gap-in-3D-Object-Detection-for-Autonomous-Driving"><a href="#Pseudo-LiDAR-from-Visual-Depth-Estimation-Bridging-the-Gap-in-3D-Object-Detection-for-Autonomous-Driving" class="headerlink" title="Pseudo-LiDAR from Visual Depth Estimation:Bridging the Gap in 3D Object Detection for Autonomous Driving"></a>Pseudo-LiDAR from Visual Depth Estimation:Bridging the Gap in 3D Object Detection for Autonomous Driving</h1><ul>
+            <h1 id="Pseudo-LiDAR-from-Visual-Depth-Estimation-Bridging-the-Gap-in-3D-Object-Detection-for-Autonomous-Driving"><a href="#Pseudo-LiDAR-from-Visual-Depth-Estimation-Bridging-the-Gap-in-3D-Object-Detection-for-Autonomous-Driving" class="headerlink" title="Pseudo-LiDAR from Visual Depth Estimation:Bridging the Gap in 3D Object Detection for Autonomous Driving"></a>Pseudo-LiDAR from Visual Depth Estimation:Bridging the Gap in 3D Object Detection for Autonomous Driving</h1><ul>
 <li>keyword: 3D object detection, autonomous driving, LiDAR, image-based depth estimation, depth estimation, pseudo-LiDAR representations, KITTI 3D object detection leaderboard, stereo-image-based, 3D point cloud</li>
 <li>code : <a href="https://github.com/mileyan/pseudo_lidar" target="_blank" rel="noopener">https://github.com/mileyan/pseudo_lidar</a></li>
 <li>archive : <a href="https://arxiv.org/pdf/1812.07179.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1812.07179.pdf</a></li>
@@ -188,7 +188,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="논문이-제안하는-2-step-검증방식"><a href="#논문이-제안하는-2-step-검증방식" class="headerlink" title="논문이 제안하는 2 step 검증방식"></a>논문이 제안하는 2 step 검증방식</h3><p><img src="Pseudo-Lidar%20bae74e85670a476f9601b35cfcf6e46d/Untitled.png" alt="Pseudo-Lidar%20bae74e85670a476f9601b35cfcf6e46d/Untitled.png"></p>
+<h3 id="논문이-제안하는-2-step-검증방식"><a href="#논문이-제안하는-2-step-검증방식" class="headerlink" title="논문이 제안하는 2 step 검증방식"></a>논문이 제안하는 2 step 검증방식</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Untitled.png)</p>
 <ul>
 <li>Step 1. Monocular / Stereo Image 기반 depth estimation → 3D point cloud로 <strong>표현방식</strong> 변환<ul>
 <li>So called “Pseudo-LiDAR”</li>
@@ -228,7 +228,7 @@
 <li>$b$ : baseline</li>
 <li>$u,v$ : camera pixel coordinate</li>
 </ul>
-<h3 id="Pseudo-LiDAR-generation"><a href="#Pseudo-LiDAR-generation" class="headerlink" title="Pseudo-LiDAR generation"></a>Pseudo-LiDAR generation</h3><p><img src="Pseudo-Lidar%20bae74e85670a476f9601b35cfcf6e46d/Untitled%201.png" alt="Pseudo-Lidar%20bae74e85670a476f9601b35cfcf6e46d/Untitled%201.png"></p>
+<h3 id="Pseudo-LiDAR-generation"><a href="#Pseudo-LiDAR-generation" class="headerlink" title="Pseudo-LiDAR generation"></a>Pseudo-LiDAR generation</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Untitled 1.png)</p>
 <p>$$(depth) z=D(u,v) \ (width) x=\frac{(u-c_U)\times z}{f_U}\(height)  y=\frac{(v-c_V)\times z}{f_V}$$</p>
 <ul>
 <li>$c_U, c_V$ camera center pixel location</li>
@@ -239,7 +239,7 @@
 <li>Bird’s Eye View기반의 Network 중 SOTA인 AVOD를 baseline으로 사용</li>
 </ul>
 <h3 id="Data-representation-matters"><a href="#Data-representation-matters" class="headerlink" title="Data representation matters"></a>Data representation matters</h3><p>2D Depth Map에 2D Conv를 적용하면 실제 domain으로 정사영 시, 꺠지는 현상 발생함</p>
-<p>![Screenshot from 2020-11-06 22-16-41](Screenshot from 2020-11-06 22-16-41.png)</p>
+<p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Screenshot from 2020-11-06 22-16-41.png)</p>
 <h3 id="4-Experiments"><a href="#4-Experiments" class="headerlink" title="4. Experiments"></a>4. Experiments</h3><ul>
 <li>Dataset: Kitti object detection<ul>
 <li>Train : 3,712</li>
@@ -299,16 +299,16 @@
 </ul>
 </li>
 </ul>
-<h3 id="Experimental-Results"><a href="#Experimental-Results" class="headerlink" title="Experimental Results"></a>Experimental Results</h3><p><img src="Pseudo-Lidar%20bae74e85670a476f9601b35cfcf6e46d/Untitled%202.png" alt="Pseudo-Lidar%20bae74e85670a476f9601b35cfcf6e46d/Untitled%202.png"></p>
+<h3 id="Experimental-Results"><a href="#Experimental-Results" class="headerlink" title="Experimental Results"></a>Experimental Results</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Untitled 2.png)</p>
 <ul>
 <li>파란 볼드체 (pseudo-LiDAR)기반 이 image based SOTA baseline 보다 월등히 좋은 성적을 냄</li>
 </ul>
-<h3 id="Impact-of-Image-Representation"><a href="#Impact-of-Image-Representation" class="headerlink" title="Impact of Image Representation"></a>Impact of Image Representation</h3><p><img src="Pseudo-Lidar%20bae74e85670a476f9601b35cfcf6e46d/Untitled%203.png" alt="Pseudo-Lidar%20bae74e85670a476f9601b35cfcf6e46d/Untitled%203.png"></p>
+<h3 id="Impact-of-Image-Representation"><a href="#Impact-of-Image-Representation" class="headerlink" title="Impact of Image Representation"></a>Impact of Image Representation</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Untitled 3.png)</p>
 <ul>
 <li>MLF는 DISPNET을 사용하기에 같은 Disparity 성능을 냄.</li>
 <li>단지 Representation을 Frontal (2D image)에서 Pseudo-LiDAR를 사용했을 경우 성능이 훨씬 나아짐</li>
 </ul>
-<h3 id="Impact-of-stereo-disparity-estimation-accuracy"><a href="#Impact-of-stereo-disparity-estimation-accuracy" class="headerlink" title="Impact of stereo disparity estimation accuracy"></a>Impact of stereo disparity estimation accuracy</h3><p><img src="Pseudo-Lidar%20bae74e85670a476f9601b35cfcf6e46d/Untitled%204.png" alt="Pseudo-Lidar%20bae74e85670a476f9601b35cfcf6e46d/Untitled%204.png"></p>
+<h3 id="Impact-of-stereo-disparity-estimation-accuracy"><a href="#Impact-of-stereo-disparity-estimation-accuracy" class="headerlink" title="Impact of stereo disparity estimation accuracy"></a>Impact of stereo disparity estimation accuracy</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Untitled 4.png)</p>
 <ul>
 <li>PSMNET이 DISPNET보다 stereo disparity estimation accuracy가 좋으나 (1.86% &gt; 4.32% error) Depth estimation 성능은 Detection algorithm에 큰 영향을 안끼침 (Compare F-POINTNET DISPNET-C vs. F-POINTNET PSMNET)</li>
 <li>왜 그럴까?<ul>
@@ -324,7 +324,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="Pedestrian-and-cyclist-detection짐"><a href="#Pedestrian-and-cyclist-detection짐" class="headerlink" title="Pedestrian and cyclist detection짐"></a>Pedestrian and cyclist detection짐</h3><p><img src="Pseudo-Lidar%20bae74e85670a476f9601b35cfcf6e46d/Untitled%205.png" alt="Pseudo-Lidar%20bae74e85670a476f9601b35cfcf6e46d/Untitled%205.png"></p>
+<h3 id="Pedestrian-and-cyclist-detection짐"><a href="#Pedestrian-and-cyclist-detection짐" class="headerlink" title="Pedestrian and cyclist detection짐"></a>Pedestrian and cyclist detection짐</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Untitled 5.png)</p>
 <ul>
 <li>Car보다 작고, hard하기에 성능이 LiDAR대비 떨어짐</li>
 <li>Image based에서는 논외임.<ul>
@@ -332,12 +332,11 @@
 </ul>
 </li>
 </ul>
-<h3 id="Results-on-the-test-set"><a href="#Results-on-the-test-set" class="headerlink" title="Results on the test set"></a>Results on the test set</h3><p><img src="Pseudo-Lidar%20bae74e85670a476f9601b35cfcf6e46d/Untitled%206.png" alt="Pseudo-Lidar%20bae74e85670a476f9601b35cfcf6e46d/Untitled%206.png"></p>
+<h3 id="Results-on-the-test-set"><a href="#Results-on-the-test-set" class="headerlink" title="Results on the test set"></a>Results on the test set</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Untitled 6.png)</p>
 <ul>
 <li>Validation set에 Overfitting된게 아님을 확인</li>
 </ul>
-<h3 id="Visualization-Validation-set"><a href="#Visualization-Validation-set" class="headerlink" title="Visualization (Validation set)"></a>Visualization (Validation set)</h3><img src="Screenshot from 2020-11-06 22-16-41-1604668731219.png" alt="Screenshot from 2020-11-06 22-16-41" style="zoom:50%;">
-
+<h3 id="Visualization-Validation-set"><a href="#Visualization-Validation-set" class="headerlink" title="Visualization (Validation set)"></a>Visualization (Validation set)</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Screenshot from 2020-11-06 22-16-41-1604670677961.png)</p>
 <h3 id="Supplementary-Material"><a href="#Supplementary-Material" class="headerlink" title="Supplementary Material"></a>Supplementary Material</h3><ul>
 <li>Ground plane estimation<ul>
 <li>AVOD 의 경우 ground plane을 아래와 같이 4개의 parameter로 표현함</li>
@@ -348,7 +347,7 @@
 <ul>
 <li>Pseudo-LiDAR point cloud 정보를 RANSAC을 이용해 아래 식을 만족하는 ground plane estimation 수행</li>
 </ul>
-<p>${w^Tp}+h=0$</p>
+<p>$${w^Tp}+h=0$$</p>
 <p>Where</p>
 <ul>
 <li>$W$ : ground plane norm vector (w_y=-1)</li>
@@ -920,7 +919,7 @@ ie:0 (30/360) (40/480) (200/360) (200/480)0 0.0833 0.0833 0.556 0.417</code></pr
             
         </h1>
         <div class="content">
-            <h1 id><a href="#" class="headerlink" title></a></h1><h1 id="Single-Shot-Multibox-Detector"><a href="#Single-Shot-Multibox-Detector" class="headerlink" title="Single Shot Multibox Detector"></a>Single Shot Multibox Detector</h1><ul>
+            <h1 id="Single-Shot-Multibox-Detector"><a href="#Single-Shot-Multibox-Detector" class="headerlink" title="Single Shot Multibox Detector"></a>Single Shot Multibox Detector</h1><ul>
 <li>Created: Oct 17, 2019 12:23 PM</li>
 <li>Tags: 논문</li>
 </ul>
@@ -1100,7 +1099,7 @@ ie:0 (30/360) (40/480) (200/360) (200/480)0 0.0833 0.0833 0.556 0.417</code></pr
 <li>SSD512는 Faster RCNN보다 3배 빠르면서 성능이 VOC, MSCOCO, ILSVRC 모두 좋았음</li>
 <li>SSD300은 59 FPS로 실시간 물체인식 알고리즘임</li>
 </ul>
-<h3 id="-1"><a href="#-1" class="headerlink" title></a></h3><h1 id="6-Reference"><a href="#6-Reference" class="headerlink" title="6. Reference"></a>6. Reference</h1><ul>
+<h3 id><a href="#" class="headerlink" title></a></h3><h1 id="6-Reference"><a href="#6-Reference" class="headerlink" title="6. Reference"></a>6. Reference</h1><ul>
 <li><a href="https://towardsdatascience.com/r-cnn-fast-r-cnn-faster-r-cnn-yolo-object-detection-algorithms-36d53571365e" target="_blank" rel="noopener">https://towardsdatascience.com/r-cnn-fast-r-cnn-faster-r-cnn-yolo-object-detection-algorithms-36d53571365e</a></li>
 </ul>
 
@@ -1929,7 +1928,7 @@ ie:0 (30/360) (40/480) (200/360) (200/480)0 0.0833 0.0833 0.556 0.417</code></pr
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        8
+                        9
                     </p>
                 </div>
             </div>
@@ -2038,7 +2037,7 @@ ie:0 (30/360) (40/480) (200/360) (200/480)0 0.0833 0.0833 0.556 0.417</code></pr
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Arduino-Ethernet-Communicaiton-Arduino-Vibration-Sensor-Web-socket-communication/" style="font-size: 10px;">Arduino, Ethernet Communicaiton, Arduino, Vibration Sensor, Web socket communication</a> <a href="/tags/Mobilent-v3-AI-Object-Detection-Quantization-Tensorflow-Lite/" style="font-size: 10px;">Mobilent v3, AI, Object Detection, Quantization, Tensorflow Lite</a> <a href="/tags/SSD/" style="font-size: 10px;">SSD</a> <a href="/tags/Static-Generator-Hexo-Typora-Blog/" style="font-size: 10px;">Static Generator, Hexo, Typora, Blog</a> <a href="/tags/YOLO-v1/" style="font-size: 10px;">YOLO v1</a> <a href="/tags/YOLO-v2/" style="font-size: 10px;">YOLO v2</a> <a href="/tags/darknet-tutorial-Gradient-Harmonized-SSD-Tutorial/" style="font-size: 10px;">darknet, tutorial, Gradient-Harmonized-SSD Tutorial</a> <a href="/tags/darknet-tutorial-Yolo-V3/" style="font-size: 10px;">darknet, tutorial, Yolo V3</a>
+        <a href="/tags/Arduino-Ethernet-Communicaiton-Arduino-Vibration-Sensor-Web-socket-communication/" style="font-size: 10px;">Arduino, Ethernet Communicaiton, Arduino, Vibration Sensor, Web socket communication</a> <a href="/tags/Mobilent-v3-AI-Object-Detection-Quantization-Tensorflow-Lite/" style="font-size: 10px;">Mobilent v3, AI, Object Detection, Quantization, Tensorflow Lite</a> <a href="/tags/SSD/" style="font-size: 10px;">SSD</a> <a href="/tags/Static-Generator-Hexo-Typora-Blog/" style="font-size: 10px;">Static Generator, Hexo, Typora, Blog</a> <a href="/tags/YOLO-v1/" style="font-size: 10px;">YOLO v1</a> <a href="/tags/YOLO-v2/" style="font-size: 10px;">YOLO v2</a> <a href="/tags/darknet-tutorial-Gradient-Harmonized-SSD-Tutorial/" style="font-size: 10px;">darknet, tutorial, Gradient-Harmonized-SSD Tutorial</a> <a href="/tags/darknet-tutorial-Yolo-V3/" style="font-size: 10px;">darknet, tutorial, Yolo V3</a> <a href="/tags/pseudo-lidar/" style="font-size: 10px;">pseudo-lidar</a>
     </div>
 </div>
 
@@ -2057,14 +2056,14 @@ ie:0 (30/360) (40/480) (200/360) (200/480)0 0.0833 0.0833 0.556 0.417</code></pr
             
             <a href="/2020/11/06/papers/Tesla의 auto-pilot beta 버전 논문 리뷰/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt>
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tesla의 auto-pilot beta 버전 논문 리뷰">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-06T13:05:10.623Z">2020-11-06</time></div>
-                    <a href="/2020/11/06/papers/Tesla의 auto-pilot beta 버전 논문 리뷰/" class="has-link-black-ter is-size-6"></a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-06T13:49:00.000Z">2020-11-06</time></div>
+                    <a href="/2020/11/06/papers/Tesla의 auto-pilot beta 버전 논문 리뷰/" class="has-link-black-ter is-size-6">Tesla의 auto-pilot beta 버전 논문 리뷰</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -2280,6 +2279,13 @@ ie:0 (30/360) (40/480) (200/360) (200/480)0 0.0833 0.0833 0.556 0.417</code></pr
                 <div class="control">
                     <a class="tags has-addons" href="/tags/darknet-tutorial-Yolo-V3/">
                         <span class="tag">darknet, tutorial, Yolo V3</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pseudo-lidar/">
+                        <span class="tag">pseudo-lidar</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -2311,14 +2317,14 @@ ie:0 (30/360) (40/480) (200/360) (200/480)0 0.0833 0.0833 0.556 0.417</code></pr
             
             <a href="/2020/11/06/papers/Tesla의 auto-pilot beta 버전 논문 리뷰/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt>
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tesla의 auto-pilot beta 버전 논문 리뷰">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-06T13:05:10.623Z">2020-11-06</time></div>
-                    <a href="/2020/11/06/papers/Tesla의 auto-pilot beta 버전 논문 리뷰/" class="has-link-black-ter is-size-6"></a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-06T13:49:00.000Z">2020-11-06</time></div>
+                    <a href="/2020/11/06/papers/Tesla의 auto-pilot beta 버전 논문 리뷰/" class="has-link-black-ter is-size-6">Tesla의 auto-pilot beta 버전 논문 리뷰</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -2534,6 +2540,13 @@ ie:0 (30/360) (40/480) (200/360) (200/480)0 0.0833 0.0833 0.556 0.417</code></pr
                 <div class="control">
                     <a class="tags has-addons" href="/tags/darknet-tutorial-Yolo-V3/">
                         <span class="tag">darknet, tutorial, Yolo V3</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pseudo-lidar/">
+                        <span class="tag">pseudo-lidar</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

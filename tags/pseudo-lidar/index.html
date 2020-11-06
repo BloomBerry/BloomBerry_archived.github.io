@@ -2,24 +2,19 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>SSD - BloomBerry&#39;s Tech Blog</title>
+<title>Tag: pseudo-lidar - BloomBerry&#39;s Tech Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<link rel="canonical" href="https://BloomBerry.github.io/2019/10/19/papers/ssd/">
+<link rel="canonical" href="https://BloomBerry.github.io/tags/pseudo-lidar/">
 
-    <meta name="description" content="Single Shot Multibox Detector Created: Oct 17, 2019 12:23 PM Tags: 논문  0. Background ‘15.12 Archive 등재 Wei Liu, et. al  Abstract Aspect Ratio, Scales를 feature map마다 별개로 둔 앵커 박스를 생성 다양한 크기로 출현하는 물체를 인식">
-<meta name="keywords" content="SSD">
-<meta property="og:type" content="article">
-<meta property="og:title" content="SSD">
-<meta property="og:url" content="https://BloomBerry.github.io/2019/10/19/papers/SSD/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="BloomBerry&#39;s Tech Blog">
+<meta property="og:url" content="https://BloomBerry.github.io/tags/pseudo-lidar/index.html">
 <meta property="og:site_name" content="BloomBerry&#39;s Tech Blog">
-<meta property="og:description" content="Single Shot Multibox Detector Created: Oct 17, 2019 12:23 PM Tags: 논문  0. Background ‘15.12 Archive 등재 Wei Liu, et. al  Abstract Aspect Ratio, Scales를 feature map마다 별개로 둔 앵커 박스를 생성 다양한 크기로 출현하는 물체를 인식">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://bloomberry.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2020-11-06T13:52:04.546Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SSD">
-<meta name="twitter:description" content="Single Shot Multibox Detector Created: Oct 17, 2019 12:23 PM Tags: 논문  0. Background ‘15.12 Archive 등재 Wei Liu, et. al  Abstract Aspect Ratio, Scales를 feature map마다 별개로 둔 앵커 박스를 생성 다양한 크기로 출현하는 물체를 인식">
+<meta name="twitter:title" content="BloomBerry&#39;s Tech Blog">
 <meta name="twitter:image" content="https://bloomberry.github.io/images/og_image.png">
 
 
@@ -95,7 +90,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="SSD" height="28">
+                <img src="/images/logo.svg" alt="BloomBerry&#39;s Tech Blog" height="28">
             
             </a>
         </div>
@@ -141,18 +136,29 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">pseudo-lidar</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-19T11:30:00.000Z">2019-10-19</time>
+                <time class="level-item has-text-grey" datetime="2020-11-06T13:49:00.000Z">2020-11-06</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    10 minutes read (About 1525 words)
+                    8 minutes read (About 1247 words)
                 </span>
                 
                 
@@ -161,203 +167,221 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                SSD
+                <a class="has-link-black-ter" href="/2020/11/06/papers/Tesla의 auto-pilot beta 버전 논문 리뷰/">Tesla의 auto-pilot beta 버전 논문 리뷰</a>
             
         </h1>
         <div class="content">
-            <h1 id="Single-Shot-Multibox-Detector"><a href="#Single-Shot-Multibox-Detector" class="headerlink" title="Single Shot Multibox Detector"></a>Single Shot Multibox Detector</h1><ul>
-<li>Created: Oct 17, 2019 12:23 PM</li>
-<li>Tags: 논문</li>
+            <h1 id="Pseudo-LiDAR-from-Visual-Depth-Estimation-Bridging-the-Gap-in-3D-Object-Detection-for-Autonomous-Driving"><a href="#Pseudo-LiDAR-from-Visual-Depth-Estimation-Bridging-the-Gap-in-3D-Object-Detection-for-Autonomous-Driving" class="headerlink" title="Pseudo-LiDAR from Visual Depth Estimation:Bridging the Gap in 3D Object Detection for Autonomous Driving"></a>Pseudo-LiDAR from Visual Depth Estimation:Bridging the Gap in 3D Object Detection for Autonomous Driving</h1><ul>
+<li>keyword: 3D object detection, autonomous driving, LiDAR, image-based depth estimation, depth estimation, pseudo-LiDAR representations, KITTI 3D object detection leaderboard, stereo-image-based, 3D point cloud</li>
+<li>code : <a href="https://github.com/mileyan/pseudo_lidar" target="_blank" rel="noopener">https://github.com/mileyan/pseudo_lidar</a></li>
+<li>archive : <a href="https://arxiv.org/pdf/1812.07179.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1812.07179.pdf</a></li>
 </ul>
-<h1 id="0-Background"><a href="#0-Background" class="headerlink" title="0. Background"></a>0. Background</h1><ul>
-<li>‘15.12 Archive 등재</li>
-<li>Wei Liu, et. al</li>
-</ul>
-<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><ul>
-<li>Aspect Ratio, Scales를 feature map마다 별개로 둔 앵커 박스를 생성<ul>
-<li>다양한 크기로 출현하는 물체를 인식하기 위함</li>
-</ul>
-</li>
-<li>Single Neural Network의 출력은 앵커박스로 이산화</li>
-<li>Prediction 시, 물체의 클래스 probability score와 앵커 박스로부터 조정될 크기 값을 출력</li>
-<li>Input: 300x300) Pascal VOC 207 test : 74.3 mAP // 59 FPS@TitanX (Faster RCNN: 73.2mAP // 7 FPS, YOLO: 63.4mAP)</li>
-</ul>
-<h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h1><h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
-<li>Single Shot Detector (YOLO) 보다 정확하고, slower techiques (Faster R-CNN)보다 빠른 실시간 물체인식 알고리즘 제안</li>
-<li>고정된 Anchor-Box 기준으로 offset과 score를 추출하기 위해 Feature map에 Convolution Layer를 추가한 구조</li>
-<li>서로 독립적인 Feature map에서 scale, aspect ratio를 바꿔서 정확도 향상시킴</li>
-<li>Pascal VOC, COCO, ILSVRC 비교하여 성능&amp;속도 trade-off 향상됨을 입증함</li>
-</ul>
-<h1 id="2-The-Single-Shot-Detector-SSD"><a href="#2-The-Single-Shot-Detector-SSD" class="headerlink" title="2. The Single Shot Detector (SSD)"></a>2. The Single Shot Detector (SSD)</h1><p><img src="/images/SSD/Untitled-c2817ebb-d3bc-460c-8aac-35ff4d554929.png" alt></p>
+<h3 id="Image-based-3D-object-detection의-한계"><a href="#Image-based-3D-object-detection의-한계" class="headerlink" title="Image based 3D object detection의 한계"></a>Image based 3D object detection의 한계</h3><p>KITTI benchmark 기준..</p>
 <ul>
-<li>4x4 &amp; 8x8 Feature Map에서 생성된 anchor-box 예시.</li>
-<li>각각 빨간색, 파란색 anchor-box는 G.T.인 개, 고양이와 matching되어 positive anchorbox, 나머진 nregative anchorbox로 (배경으로) 학습이 됨</li>
-<li>목적함수(Loss)는 confidance loss + localization loss의 합계</li>
+<li>Image based SOTA = 10% AP</li>
+<li>LiDAR only SOTA = 66%</li>
+<li>Image + LiDAR = 73%</li>
 </ul>
-<h2 id="2-1-Model"><a href="#2-1-Model" class="headerlink" title="2-1. Model"></a>2-1. Model</h2><p><img src="/images/SSD/Untitled-2ced08bf-260b-4360-9fe9-a944f724eb2d.png" alt></p>
+<h3 id="Image-based-성능이-부진한-이유-기존"><a href="#Image-based-성능이-부진한-이유-기존" class="headerlink" title="Image based 성능이 부진한 이유 (기존)"></a>Image based 성능이 부진한 이유 (기존)</h3><ul>
+<li>Stereo depth-estimator는 depth에 대해 quadratic한 error를 갖는다.</li>
+<li>LiDAR는 depth에 대해 linear한 error를 갖는다.</li>
+</ul>
+<h3 id="Image-based-성능이-부진한-이유-제안"><a href="#Image-based-성능이-부진한-이유-제안" class="headerlink" title="Image based 성능이 부진한 이유 (제안)"></a>Image based 성능이 부진한 이유 (제안)</h3><ul>
+<li>ConvNet 기반의 3D 물체 인식 시스템에서 표현 방식의 잘못된 선택</li>
+</ul>
+<p>(poor choice of representations of the 3D information for ConvNet-based 3D object detection system)</p>
 <ul>
-<li>전반부 (BaseNet): 이미지로부터 높은 해상도의 feature map 추출<ul>
-<li>VGG 16 사용</li>
-</ul>
-</li>
-<li>후반부 (Detection Head): 물체 인식 출력 값 생성<ul>
-<li>다양한 크기의 Feature-map: Output Stride 8, 16, 32, 64, 128, 256 사용</li>
-<li>Convolution Predictor를 검출기로 활용함<ul>
-<li><em>m</em> x <em>n</em> 크기의 Feature-map이 채널 크기가 <em>p</em>일 경우 <em>3</em> x <em>3</em> x <em>p</em> 개의 커널로 생성함</li>
-<li>Grid 당 <em>k</em> anchor box일 경우, 출력 갯수는 <em>kmn</em>(<em>c+4</em>)</li>
+<li>LiDAR signal representation : 3D point clouds or BEV 관점</li>
+<li>Image based representation : 2D image<ul>
+<li>멀리 떨어진 물체는 매우 작기에 검출이 어려움</li>
+<li>인접한 pixel group은 3차원 공간을 함께 가리킴</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="2-2-Training"><a href="#2-2-Training" class="headerlink" title="2-2. Training"></a>2-2. Training</h2><ul>
-<li><p>매칭 전략</p>
+<h3 id="논문이-제안하는-2-step-검증방식"><a href="#논문이-제안하는-2-step-검증방식" class="headerlink" title="논문이 제안하는 2 step 검증방식"></a>논문이 제안하는 2 step 검증방식</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Untitled.png)</p>
 <ul>
-<li>Highest jaccard overlap이 되는 앵커박스를 GT와 매칭</li>
-<li>Threshold 0.5이상을 추가로 매칭</li>
-<li>Recall을 높이기 위해(?)</li>
+<li>Step 1. Monocular / Stereo Image 기반 depth estimation → 3D point cloud로 <strong>표현방식</strong> 변환<ul>
+<li>So called “Pseudo-LiDAR”</li>
+<li>BaseLine<ul>
+<li>[10] DORN : multi-scale feature를 기존의 회기방법과 함께 사용</li>
+<li>[3] PSMNet : Siamese network를 3D ConV와 사용</li>
 </ul>
 </li>
-<li><p>목표함수</p>
+</ul>
+</li>
+<li>Step 2. 기존의 LiDAR-based 3D object Detection pipeline 사용<ul>
+<li>[17] AVOD (Aggregated ~) : BEV 영역으로 3D space 표현<ul>
+<li>x axis : width</li>
+<li>y axis : depth</li>
+<li>channel : height</li>
+</ul>
+</li>
+<li>[25] frustrum PointNet : 3D point cloud로 3D space 표현</li>
+</ul>
+</li>
+<li>결과<ul>
+<li>Metrics : KITTI benchmark <a href="mailto:IoU@0.7" target="_blank" rel="noopener">IoU@0.7</a> “moderately hard” car class<ul>
+<li>45.3% 3D AP on validation set (기존 Image-based SOTA 대비 <strong>350% 상승</strong>)</li>
+<li>LiDAR-based System과 Image-based 간의 격차를 절반으로 줄임</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Depth-Estimation"><a href="#Depth-Estimation" class="headerlink" title="Depth Estimation"></a>Depth Estimation</h3><ul>
+<li>Stereo camera기반 disparity estimation algorithm</li>
+</ul>
+<p>$$D(u,v) = \frac{f_U\times b}{Y(u,v)}$$</p>
 <ul>
-<li>x는 matched index 0이면 unmatched, 1은 matched.</li>
-<li>N은 matching된 앵커박스 갯수</li>
-<li>c는 class probability</li>
+<li>$f_U$ : focal length for left camera</li>
+<li>$Y(u,v)$ : horizontal disparity</li>
+<li>$b$ : baseline</li>
+<li>$u,v$ : camera pixel coordinate</li>
 </ul>
-</li>
-</ul>
-<p><img src="/images/SSD/Untitled-4e515659-5bca-4ca3-bfd9-0af62d4b0970.png" alt></p>
+<h3 id="Pseudo-LiDAR-generation"><a href="#Pseudo-LiDAR-generation" class="headerlink" title="Pseudo-LiDAR generation"></a>Pseudo-LiDAR generation</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Untitled 1.png)</p>
+<p>$$(depth) z=D(u,v) \ (width) x=\frac{(u-c_U)\times z}{f_U}\(height)  y=\frac{(v-c_V)\times z}{f_V}$$</p>
 <ul>
-<li>위치 손실<ul>
-<li>L1손실함수. 추정 박스(l)과 GT박스(g)간의 차이를 손실값으로 봄</li>
-<li>앵커박스의 중심(dcx,dcy)와의 offset을 학습하도록 구현됨</li>
-<li>너비(dwi), 높이(dhi)로 정규화시킴</li>
-<li>모두 matching된 앵커박스만 손실값으로 봄</li>
+<li>$c_U, c_V$ camera center pixel location</li>
+<li>$f_V$ : vertical focal length</li>
+</ul>
+<h3 id="3D-object-detection"><a href="#3D-object-detection" class="headerlink" title="3D object detection"></a>3D object detection</h3><ul>
+<li>3D point cloud 기반의 Network 중 SOTA인 PSMNet을 baseline으로 사용</li>
+<li>Bird’s Eye View기반의 Network 중 SOTA인 AVOD를 baseline으로 사용</li>
+</ul>
+<h3 id="Data-representation-matters"><a href="#Data-representation-matters" class="headerlink" title="Data representation matters"></a>Data representation matters</h3><p>2D Depth Map에 2D Conv를 적용하면 실제 domain으로 정사영 시, 꺠지는 현상 발생함</p>
+<p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Screenshot from 2020-11-06 22-16-41.png)</p>
+<h3 id="4-Experiments"><a href="#4-Experiments" class="headerlink" title="4. Experiments"></a>4. Experiments</h3><ul>
+<li>Dataset: Kitti object detection<ul>
+<li>Train : 3,712</li>
+<li>Val : 3,769</li>
+<li>Test : 7,518</li>
+</ul>
+</li>
+<li>Metric : 3D &amp; BEV AP @0.5:0.7 for Car class</li>
+<li>Image기반의 baseline<ul>
+<li>Mono3D : Monocular Camera기반</li>
+<li>3DOP : Stereo Camera기반</li>
+<li>MLF : Mono / Stereo기반<ul>
+<li>RGB 3 channel에 Depth 정보를 concatnate해서 Faster-RCNN 기반으로 학습</li>
 </ul>
 </li>
 </ul>
-<p><img src="/images/SSD/Untitled-e61fbee7-3a6c-4b8c-8dcc-2bce14a4212b.png" alt></p>
+</li>
+<li>Stereo disparity estimation<ul>
+<li>Learning based<ul>
+<li>PSMNet : KITTI Stereo 2015 200 dataset으로 학습된 weight는 사용 불가<ul>
+<li>사유 : KITTI validation set에 일부 data가 겹침. → KITTI 3K trainset으로 fineTuned w/ pseudo disparity GT<ul>
+<li>PSMNet*</li>
+</ul>
+</li>
+<li>성능 : KITTI stereo 2015, 1.86% error</li>
+</ul>
+</li>
+<li>DISPNet : MLF Stereo도 DISPNet 기반.<ul>
+<li>DISPNet-C : with correlation</li>
+<li>DISPNet-S: w/o correlation</li>
+<li>성능 : KITTI stereo 2015, 4.32% error</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Non-learning based<ul>
+<li>SPS-Stereo</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Monocular depth estimation<ul>
+<li>[10] DORN를 사용.</li>
+</ul>
+</li>
+<li>Pseudo-LiDAR generation<ul>
+<li>From Image coordinate to Velodyne LiDAR’s coordinate system</li>
+<li>Using calibration matrices provided.</li>
+</ul>
+</li>
+<li>3D object Detection<ul>
+<li>Image + Lidar based<ul>
+<li>Frustum PointNet-v1 [25]</li>
+<li>AVOD-FPN [17]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Experimental-Results"><a href="#Experimental-Results" class="headerlink" title="Experimental Results"></a>Experimental Results</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Untitled 2.png)</p>
 <ul>
-<li>분류 손실</li>
-<li>매칭된 앵커박스(positive)와 매칭 안된 앵커박스(negative)의 비율을 1:3 으로 학습</li>
-<li>더 안정적으로 학습됨</li>
+<li>파란 볼드체 (pseudo-LiDAR)기반 이 image based SOTA baseline 보다 월등히 좋은 성적을 냄</li>
 </ul>
-<p><img src="/images/SSD/Untitled-496ecf18-2287-4940-b26c-b9b9d04b5346.png" alt></p>
+<h3 id="Impact-of-Image-Representation"><a href="#Impact-of-Image-Representation" class="headerlink" title="Impact of Image Representation"></a>Impact of Image Representation</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Untitled 3.png)</p>
 <ul>
-<li>Feature map의 grid에서 생성된 박스는 반드시 receptive field가 아님.</li>
-<li>Scale값을 조정해서 앵커박스의 크기를 조절할 수 있음</li>
-<li>m개의 feature map일 때, linear scaling rule 적용하여 scale 산출</li>
+<li>MLF는 DISPNET을 사용하기에 같은 Disparity 성능을 냄.</li>
+<li>단지 Representation을 Frontal (2D image)에서 Pseudo-LiDAR를 사용했을 경우 성능이 훨씬 나아짐</li>
 </ul>
-<p><img src="/images/SSD/Untitled-e3670a91-f948-40bb-b98f-fb4151bdd440.png" alt></p>
+<h3 id="Impact-of-stereo-disparity-estimation-accuracy"><a href="#Impact-of-stereo-disparity-estimation-accuracy" class="headerlink" title="Impact of stereo disparity estimation accuracy"></a>Impact of stereo disparity estimation accuracy</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Untitled 4.png)</p>
 <ul>
-<li>다양한 위치, 크기의 물체를 견고히 인식하기 위해 data augmentation기법 적용<ul>
-<li>Horizontal flip, Random patch, image distortion, etc</li>
+<li>PSMNET이 DISPNET보다 stereo disparity estimation accuracy가 좋으나 (1.86% &gt; 4.32% error) Depth estimation 성능은 Detection algorithm에 큰 영향을 안끼침 (Compare F-POINTNET DISPNET-C vs. F-POINTNET PSMNET)</li>
+<li>왜 그럴까?<ul>
+<li>Disparity accuracy가 Depth accuracy를 대변하지 않을 수 있음</li>
+<li>voxel 기반으로 point cloud를 다룰 경우 (F-POINTNET), depth noise에 둔감할 수 있음</li>
 </ul>
 </li>
-<li>Basenet은 vgg16 사용</li>
 </ul>
-<h1 id="3-Experimental-Results"><a href="#3-Experimental-Results" class="headerlink" title="3. Experimental Results"></a>3. Experimental Results</h1><h2 id="3-1-Pascal-VOC2007"><a href="#3-1-Pascal-VOC2007" class="headerlink" title="3-1. Pascal VOC2007"></a>3-1. Pascal VOC2007</h2><ul>
-<li>Pascal voc 2012 test 결과 : 81.6mAP</li>
-<li>COCO pretrained+512x512+voc12 trainval 학습셋으로 사용</li>
-</ul>
-<p><img src="/images/SSD/Untitled-e1ee7b3b-6000-442c-a74e-f1ec289fbd8d.png" alt></p>
-<h2 id="3-2-Model-analysis"><a href="#3-2-Model-analysis" class="headerlink" title="3-2. Model analysis"></a>3-2. Model analysis</h2><ul>
-<li>Data Augmentation에 의한 성능 향상이 앞도적으로 높았음 (8.8% mAP 향상)</li>
-<li>Anchor Box의 모양을 다양화한게 성능 향상에 도움이 됨</li>
-<li>Atrous Conv을 사용함으로써 성능은 유지하되, 속도 향상이 있었음 (20% 향상)</li>
-</ul>
-<p><img src="/images/SSD/Untitled-bdf55de2-1e9b-475f-989c-4b814dbbd0df.png" alt></p>
+<h3 id="Comparison-to-LiDAR-information"><a href="#Comparison-to-LiDAR-information" class="headerlink" title="Comparison to LiDAR information"></a>Comparison to LiDAR information</h3><p>Table 1 참고. 물체가 멀리 있을 수록, IOU threshold가 높을수록 (0.7 &gt; 0.5) 성능이 하락함.</p>
 <ul>
-<li>흰색은 True Positive, 파란색(Local error) 빨간색(Class error)은 True Negative  보라색은 False Positive</li>
-<li>빨간 실선은 (IOU Threshold=0.5) Recall, 점선은 (IOU Threshold=0.1) Recall</li>
+<li>Depth accuracy 영향임.<ul>
+<li>0.4 MPixel → 고해상도로 변경 시 해결 가능</li>
 </ul>
-<p><img src="/images/SSD/Untitled-58110c17-e27e-4787-a73f-3e0e4c2c4b7f.png" alt></p>
+</li>
+</ul>
+<h3 id="Pedestrian-and-cyclist-detection짐"><a href="#Pedestrian-and-cyclist-detection짐" class="headerlink" title="Pedestrian and cyclist detection짐"></a>Pedestrian and cyclist detection짐</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Untitled 5.png)</p>
 <ul>
-<li>Localization error가 작음.</li>
-<li>위치 regression잘 한다는 뜻</li>
-<li>Classification error가 큼.</li>
-<li>검출기 head를 localization과 공유하기 때문</li>
+<li>Car보다 작고, hard하기에 성능이 LiDAR대비 떨어짐</li>
+<li>Image based에서는 논외임.<ul>
+<li>좋은 starting point</li>
 </ul>
-<p><img src="/images/SSD/Untitled-6559f053-9124-4a42-847b-42d5c37e2949.png" alt></p>
+</li>
+</ul>
+<h3 id="Results-on-the-test-set"><a href="#Results-on-the-test-set" class="headerlink" title="Results on the test set"></a>Results on the test set</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Untitled 6.png)</p>
 <ul>
-<li><p>작은 물체를 더 못 검출.</p>
-<p>  <img src="/images/SSD/Untitled-6a03567b-98d5-404e-8fb8-104f21aecdf0.png" alt></p>
+<li>Validation set에 Overfitting된게 아님을 확인</li>
+</ul>
+<h3 id="Visualization-Validation-set"><a href="#Visualization-Validation-set" class="headerlink" title="Visualization (Validation set)"></a>Visualization (Validation set)</h3><p>![](/images/Tesla의 auto-pilot beta 버전 논문 리뷰/Screenshot from 2020-11-06 22-16-41-1604670677961.png)</p>
+<h3 id="Supplementary-Material"><a href="#Supplementary-Material" class="headerlink" title="Supplementary Material"></a>Supplementary Material</h3><ul>
+<li>Ground plane estimation<ul>
+<li>AVOD 의 경우 ground plane을 아래와 같이 4개의 parameter로 표현함</li>
+</ul>
 </li>
-<li><p>작은 물체를 검출하는 layer가 한참후에 detection head로 들어오므로, 정보손실 발생하기 때문.</p>
-</li>
 </ul>
-<h2 id="3-3-Pascal-VOC2012"><a href="#3-3-Pascal-VOC2012" class="headerlink" title="3-3. Pascal VOC2012"></a>3-3. Pascal VOC2012</h2><ul>
-<li>COCO로  pretrained시킴</li>
-<li>VOC07 train/val/test + VOC12 train/val 데이터를 학습용으로 사용</li>
-<li>Faster RCNN보다 성능 높음</li>
-</ul>
-<p><img src="/images/SSD/Untitled-538d9e44-705b-4d4c-8e37-ba0cbc8488cd.png" alt></p>
-<h2 id="3-4-COCO"><a href="#3-4-COCO" class="headerlink" title="3-4. COCO"></a>3-4. COCO</h2><ul>
-<li>Pascal VOC와 비슷한 양상임.</li>
-<li>작은 물체는 큰 물체에 비해 상대적으로 성능 향상이 적었음</li>
-</ul>
-<p><img src="/images/SSD/Untitled-57c8b169-4ad4-4795-b105-96d04f3ed6e3.png" alt></p>
-<h2 id="3-5-Preliminary-ILSVRC-results"><a href="#3-5-Preliminary-ILSVRC-results" class="headerlink" title="3-5. Preliminary ILSVRC results"></a>3-5. Preliminary ILSVRC results</h2><ul>
-<li>ILSVRC 2014 DET 데이터로 학습함</li>
-<li>43.4mAP</li>
-</ul>
-<h2 id="3-6-Data-Augmentation-for-Small-Object-Accuracy"><a href="#3-6-Data-Augmentation-for-Small-Object-Accuracy" class="headerlink" title="3-6. Data Augmentation for Small Object Accuracy"></a>3-6. Data Augmentation for Small Object Accuracy</h2><ul>
-<li>Random Crop은 Zoom In 효과를 줌</li>
-<li>Zoom Out 효과를 주기 위해 기존 이미지를 16배 키운 사이즈로 중간값으로 나머지 부분 채운후 학습.</li>
-</ul>
-<p><img src="/images/SSD/Untitled-ea55bea1-5f63-41fc-acf3-1e61759f02f3.png" alt></p>
+<p>$$H, w_x , w_y, w_z$$</p>
 <ul>
-<li>2-3 mAP 향상 있었음</li>
+<li>Pseudo-LiDAR point cloud 정보를 RANSAC을 이용해 아래 식을 만족하는 ground plane estimation 수행</li>
 </ul>
-<p><img src="/images/SSD/Untitled-5db3ed12-33bc-46c3-8f59-cf71061035f7.png" alt></p>
-<p><img src="/images/SSD/Untitled-5c86dd11-ba73-4c2a-ad0d-da05a4132cb6.png" alt></p>
-<h2 id="3-7-Inference-Time"><a href="#3-7-Inference-Time" class="headerlink" title="3-7. Inference Time"></a>3-7. Inference Time</h2><p><img src="/images/SSD/Untitled-47b2924d-8e22-4957-9c47-4e71454b89ce.png" alt></p>
+<p>$${w^Tp}+h=0$$</p>
+<p>Where</p>
 <ul>
-<li>Inference 시간을 효율적으로 하기 위해 Confidence Threshold 0.01 이하 Anchor Box는 걸름</li>
-<li>그 이후 NMS를 IOU Threshold 0.5로 주고 Max Output Box 갯수를 200으로 함<ul>
-<li>1.7ms 소요 (새로 추가한 Layer들은 2.4ms 소요)</li>
+<li>$W$ : ground plane norm vector (w_y=-1)</li>
+<li>$p$: Pseudo-LiDAR 3D point cloud</li>
+<li>$h$ : height</li>
+<li>위 식에 적용되는 Point cloud 점들은 camera에 근접한 것들만 사용<ul>
+<li>Height: 1.5m ~ 1.86m</li>
+<li>Depth : 0 ~ 40m</li>
+<li>Width : -15m ~ 15m</li>
 </ul>
 </li>
-</ul>
-<h1 id="4-Related-Work"><a href="#4-Related-Work" class="headerlink" title="4. Related Work"></a>4. Related Work</h1><ul>
-<li>Selective Search<ul>
-<li>Image(R-CNN) 혹은 feature map(Fast-RCNN, MultiBox)을 crop한 후, Fixed size로 reshape하는 작업이 필요함.</li>
-<li>여러개의 잠재 Bounding Box에 대해 별도의 Classifier, Regressor를 둠으로써 속도 저하</li>
-</ul>
-</li>
-<li>Region Proposal Network<ul>
-<li>Faster-RCNN에서 Anchor Box와 함께 처음 사용됨.</li>
-<li>CNN의 출력 feature map을 RPN의 입력으로 사용하여 CNN을 통과시켜 자동으로 Region Propose함.</li>
-<li>뒤에 Classifier, Regressor를 별도로 둠으로써 두 단계를 거침.<ul>
-<li>Classifier, Regressor없이 바로 Classification하면 SSD와 같음.</li>
+<li>Pseudo Disparity Estimation<ul>
+<li>Equation 1을 적용하여 Pseudo LiDAR point → Pseudo Disparity 추출</li>
+<li>여러 cloud point가 disparity캡에 적용 되면 랜덤하게 선택함</li>
+<li>선택되지 않은 point는 disparity없는 상태로 학습</li>
 </ul>
 </li>
+<li>SPS-Stereo<ul>
+<li>Non-learning 기반의 Stereo disparity 접근법</li>
+<li>KITTI Stereo 2015 성능 : 3.84%</li>
 </ul>
 </li>
-<li>One-shot Detector<ul>
-<li>SSD에서 Anchor Box를 최말단 Feature map에서 1개의 Anchor Box 사용 → Overfeat</li>
-<li>SSD에서 Anchor Box를 최말단 Feature map에서 grid당 1개의 Anchor Box 사용 → YOLO</li>
-</ul>
-</li>
-</ul>
-<h1 id="5-Conclusion"><a href="#5-Conclusion" class="headerlink" title="5. Conclusion"></a>5. Conclusion</h1><ul>
-<li>Multiple feature map에서 multi-scale Convolutional BBox 사용함</li>
-<li>SSD512는 Faster RCNN보다 3배 빠르면서 성능이 VOC, MSCOCO, ILSVRC 모두 좋았음</li>
-<li>SSD300은 59 FPS로 실시간 물체인식 알고리즘임</li>
-</ul>
-<h3 id><a href="#" class="headerlink" title></a></h3><h1 id="6-Reference"><a href="#6-Reference" class="headerlink" title="6. Reference"></a>6. Reference</h1><ul>
-<li><a href="https://towardsdatascience.com/r-cnn-fast-r-cnn-faster-r-cnn-yolo-object-detection-algorithms-36d53571365e" target="_blank" rel="noopener">https://towardsdatascience.com/r-cnn-fast-r-cnn-faster-r-cnn-yolo-object-detection-algorithms-36d53571365e</a></li>
 </ul>
 
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/SSD/">SSD</a>
-                </div>
-            </div>
         </div>
         
         
@@ -367,62 +391,9 @@
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
-        <div class="buttons is-centered">
-            
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
-
-<div class="notification is-danger">
-    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/19/darknet-Yolo-V3-Tutorial/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">darknet으로 Yolo V3 학습 Tutorial</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/10/papers/YOLO v2/">
-                <span class="level-item">YOLO v2</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
 
 
 </div>
@@ -1128,7 +1099,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="SSD" height="28">
+                    <img src="/images/logo.svg" alt="BloomBerry&#39;s Tech Blog" height="28">
                 
                 </a>
                 <p class="is-size-7">
